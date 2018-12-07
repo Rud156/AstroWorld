@@ -1971,6 +1971,11 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114792447000764832, guid: 18e9a6d8bbef63445a286c491f981511,
+        type: 2}
+      propertyPath: lockCursor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e9a6d8bbef63445a286c491f981511, type: 2}
   m_IsPrefabAsset: 0
@@ -3238,7 +3243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &2108519807
 Light:
   m_ObjectHideFlags: 0

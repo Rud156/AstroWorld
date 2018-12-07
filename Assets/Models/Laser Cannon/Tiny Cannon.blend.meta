@@ -1,28 +1,55 @@
 fileFormatVersion: 2
-guid: f7b91d16f41754946b29e70562a8c6a1
+guid: ebe3e5b990c8d7e4e8caae18ae27db00
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: DBY-827_BASE
-    100004: DBY-827_SOCKET
-    100006: DBY-827_WEAPON
+    100002: pad_f_l
+    100004: pad_f_r
+    100006: pad_r_l
+    100008: pad_r_r
+    100010: Plane
+    100012: platform_lower
+    100014: platform_upper
+    100016: weapon
     400000: //RootNode
-    400002: DBY-827_BASE
-    400004: DBY-827_SOCKET
-    400006: DBY-827_WEAPON
-    2100000: DBY-827_BASEMat
-    2100002: DBY-827_SOCKETMat
-    2100004: DBY-827_WEAPONMat
-    2300000: DBY-827_BASE
-    2300002: DBY-827_SOCKET
-    2300004: DBY-827_WEAPON
-    3300000: DBY-827_BASE
-    3300002: DBY-827_SOCKET
-    3300004: DBY-827_WEAPON
-    4300000: DBY-827_BASE
-    4300002: DBY-827_SOCKET
-    4300004: DBY-827_WEAPON
+    400002: pad_f_l
+    400004: pad_f_r
+    400006: pad_r_l
+    400008: pad_r_r
+    400010: Plane
+    400012: platform_lower
+    400014: platform_upper
+    400016: weapon
+    2100000: Material
+    2100002: Material_001
+    2100004: Material_004
+    2300000: pad_f_l
+    2300002: pad_f_r
+    2300004: pad_r_l
+    2300006: pad_r_r
+    2300008: Plane
+    2300010: platform_lower
+    2300012: platform_upper
+    2300014: weapon
+    3300000: pad_f_l
+    3300002: pad_f_r
+    3300004: pad_r_l
+    3300006: pad_r_r
+    3300008: Plane
+    3300010: platform_lower
+    3300012: platform_upper
+    3300014: weapon
+    4300000: platform_lower
+    4300002: Plane
+    4300004: pad_r_l
+    4300006: pad_f_l
+    4300008: pad_r_r
+    4300010: pad_f_r
+    4300012: weapon
+    4300014: platform_upper
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -54,7 +81,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -75,7 +102,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -100,7 +127,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
