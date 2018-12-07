@@ -239,6 +239,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1299081805307512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4987238073678918}
+  m_Layer: 0
+  m_Name: Slope Checker Point
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1339051704619766
 GameObject:
   m_ObjectHideFlags: 1
@@ -613,8 +628,9 @@ GameObject:
   - component: {fileID: 95092100380301356}
   - component: {fileID: 136897421524412760}
   - component: {fileID: 54320871580428980}
-  - component: {fileID: 114294578283570224}
+  - component: {fileID: 114447420735159304}
   - component: {fileID: 114107864890470732}
+  - component: {fileID: 114179997660871678}
   m_Layer: 0
   m_Name: SciFiEngineer
   m_TagString: Untagged
@@ -884,7 +900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4766861928708454}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4074734066918064
 Transform:
@@ -1077,7 +1093,7 @@ Transform:
   m_Children:
   - {fileID: 4253074076545640}
   m_Father: {fileID: 4766861928708454}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4306222622380608
 Transform:
@@ -1106,7 +1122,7 @@ Transform:
   - {fileID: 4268433190667734}
   - {fileID: 4199402282601138}
   m_Father: {fileID: 4766861928708454}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4347766142602920
 Transform:
@@ -1383,9 +1399,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819722896125644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.94725, y: 100.90127, z: 161.86722}
+  m_LocalPosition: {x: 415.73, y: 100, z: 66.94}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
+  - {fileID: 4987238073678918}
   - {fileID: 4271196287529000}
   - {fileID: 4067025480964074}
   - {fileID: 4340917543419476}
@@ -1560,6 +1577,19 @@ Transform:
   m_Father: {fileID: 4376318191876172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4987238073678918
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299081805307512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4766861928708454}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20335040705790100
 Camera:
   m_ObjectHideFlags: 1
@@ -1652,7 +1682,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 200
---- !u!114 &114294578283570224
+--- !u!114 &114179997660871678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819722896125644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e712cb0170a33414a90c824a7843603f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastPoint: {fileID: 4987238073678918}
+  maxDistance: 20
+  maxAngleAllowed: 30
+--- !u!114 &114447420735159304
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
