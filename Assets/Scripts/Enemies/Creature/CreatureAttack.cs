@@ -51,7 +51,7 @@ namespace AstroWorld.Enemies.Creature
 
                 Instantiate(base.launchEffect, base.launchPoints[i].position, lookRotation);
 
-                GameObject bulletInstance = Instantiate(base.droidBullet,
+                GameObject bulletInstance = Instantiate(base.enemyBullet,
                     base.launchPoints[i].transform.position, Quaternion.identity);
                 bulletInstance.transform.rotation = lookRotation;
                 bulletInstance.GetComponent<Rigidbody>().velocity =

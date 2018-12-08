@@ -82,6 +82,30 @@ namespace AstroWorld.Enemies.Creature
 
         public void SetPlayerHostile() => _creatureState = CreatureState.PlayerHostile;
 
+        private void CheckAndSetNextTarget()
+        {
+            if (_creatureState == CreatureState.PlayerHostile)
+                SetPlayerTarget();
+            else
+            {
+                float angleWRTTarget = CreatureHelpers
+                    .CheckTargetInsideFOV(_player, maximumDetectionDistance, lookAngle, lookingPoint);
+
+                if (angleWRTTarget != -1)
+                {
+                    _creatureState = CreatureState.PlayerFound;
+                    _currentNormalizedAngle = angleWRTTarget;
+                    SetPlayerTarget();
+                }
+                else if (_creatureState == CreatureState.PlayerFound)
+                {
+                    _creatureState = CreatureState.Idle;
+                    SelectRandomPatrolPoint();
+                }
+            }
+        }
+
+
         private void UpdateActionIfTargetPointReached()
         {
             switch (_creatureState)
@@ -111,29 +135,6 @@ namespace AstroWorld.Enemies.Creature
                 {
                     if (!_creatureAgent.hasPath || _creatureAgent.velocity.sqrMagnitude == 0f)
                         _coroutine = StartCoroutine(LazeAroundPoint());
-                }
-            }
-        }
-
-        private void CheckAndSetNextTarget()
-        {
-            if (_creatureState == CreatureState.PlayerHostile)
-                SetPlayerTarget();
-            else
-            {
-                float angleWRTTarget = CreatureHelpers
-                    .CheckTargetInsideFOV(_player, maximumDetectionDistance, lookAngle, lookingPoint);
-
-                if (angleWRTTarget != -1)
-                {
-                    _creatureState = CreatureState.PlayerFound;
-                    _currentNormalizedAngle = angleWRTTarget;
-                    SetPlayerTarget();
-                }
-                else if (_creatureState == CreatureState.PlayerFound)
-                {
-                    _creatureState = CreatureState.Idle;
-                    SelectRandomPatrolPoint();
                 }
             }
         }

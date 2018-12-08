@@ -8,7 +8,7 @@ namespace AstroWorld.Enemies.Base
     {
 
         [Header("Effects")]
-        public GameObject droidBullet;
+        public GameObject enemyBullet;
         public GameObject launchEffect;
 
         [Header("Launch Points")]

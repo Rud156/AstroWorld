@@ -86,6 +86,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1222234355394024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4253455210318156}
+  m_Layer: 0
+  m_Name: Looking Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1235648733965628
 GameObject:
   m_ObjectHideFlags: 1
@@ -605,6 +620,19 @@ Transform:
   m_Father: {fileID: 4906132659999830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4253455210318156
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222234355394024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.7}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 4944943372687076}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4273669365526554
 Transform:
   m_ObjectHideFlags: 1
@@ -974,6 +1002,7 @@ Transform:
   m_Children:
   - {fileID: 4356380918373946}
   - {fileID: 4149580817771004}
+  - {fileID: 4253455210318156}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1060,8 +1089,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf6ef13110b26140a9774d0435cb955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droidBullet: {fileID: 0}
-  launchEffect: {fileID: 0}
+  enemyBullet: {fileID: 1772906441769392, guid: 0dd12a7cec56b314680d1416c93d7d50,
+    type: 2}
+  launchEffect: {fileID: 1688836073969784, guid: 9a5f9a9053e46d345b97fa06a9463e18,
+    type: 2}
   launchPoints:
   - {fileID: 4273669365526554}
   attackTime: 3
@@ -1098,9 +1129,9 @@ MonoBehaviour:
   maximumDetectionDistance: 20
   lookRotationSpeed: 10
   maxHeight: 120
-  lookingPoint: {fileID: 0}
-  lookAngle: 0
-  angleToleranceLevel: 0
+  lookingPoint: {fileID: 4253455210318156}
+  lookAngle: 180
+  angleToleranceLevel: 20
 --- !u!114 &114619981439892486
 MonoBehaviour:
   m_ObjectHideFlags: 1
