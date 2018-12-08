@@ -9,7 +9,7 @@ namespace AstroWorld.Cannon
     [RequireComponent(typeof(TargetShoot))]
     public class FindTarget : MonoBehaviour
     {
-        public Transform lookingPoint;
+        public Transform platformBase;
         public float maxDistanceToTarget;
 
         private Transform _enemyPoints;
@@ -40,7 +40,8 @@ namespace AstroWorld.Cannon
 
             for (int i = 0; i < childCount; i++)
             {
-                float distance = Vector3.Distance(transform.position, _enemyPoints.GetChild(i).position);
+                float distance = Vector3.Distance(platformBase.position,
+                    _enemyPoints.GetChild(i).position);
                 if (distance <= maxDistanceToTarget && distance <= minDistance)
                 {
                     _currentTarget = _enemyPoints.GetChild(i);

@@ -928,54 +928,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4581663198459824, guid: a6770dbde75899e4683b0c19577df5dc,
     type: 2}
   m_PrefabInternal: {fileID: 314187613}
---- !u!1001 &314594690
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 414.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 72.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249236987854064, guid: 09adcb500222ae044adff747474b6265, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114724574280708188, guid: 09adcb500222ae044adff747474b6265,
-        type: 2}
-      propertyPath: laserBurst
-      value: 
-      objectReference: {fileID: 1133206281222358, guid: bb0509f8c82caa940ac28d17c9531695,
-        type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 09adcb500222ae044adff747474b6265, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &411977057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1256688739368894, guid: 3ecb58a70807baf40be0e954c17e3c40, type: 2}
   enemyHolder: {fileID: 0}
-  initialSpawnCount: 20
+  initialSpawnCount: 30
   spawningPoints:
   - {fileID: 1744182979}
   - {fileID: 1012934741}

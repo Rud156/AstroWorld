@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f01c8c10725904289a78868fcbad84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookingPoint: {fileID: 4582310276914252}
+  platformBase: {fileID: 4887666268675326}
   maxDistanceToTarget: 75
 --- !u!114 &114503902889054864
 MonoBehaviour:
@@ -802,10 +802,11 @@ MonoBehaviour:
   laserBurst: {fileID: 1133206281222358, guid: bb0509f8c82caa940ac28d17c9531695, type: 2}
   shootEffect: {fileID: 1309149587262186, guid: 509b135ac857b5443941cad347ebf02d,
     type: 2}
-  lookPoint: {fileID: 4582310276914252}
+  platformBase: {fileID: 4887666268675326}
   launchPoints:
   - {fileID: 4652073101072842}
   - {fileID: 4491147779113804}
   angleToleranceLevel: 20
   launchSpeed: 20
   fireRate: 3.5
+  shootOnStart: 1
