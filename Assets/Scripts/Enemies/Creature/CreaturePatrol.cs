@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using AstroWorld.Utils;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -62,7 +63,7 @@ namespace AstroWorld.Enemies.Creature
             _creatureAttack = GetComponent<CreatureAttack>();
             _creatureLaze = GetComponent<CreatureLaze>();
 
-            _player = GameObject.FindGameObjectWithTag("Player")?.transform;
+            _player = GameObject.FindGameObjectWithTag(TagManager.Player)?.transform;
 
             NavMeshTriangulation triangulation = NavMesh.CalculateTriangulation();
             _vertices = triangulation.vertices;
