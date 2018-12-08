@@ -89,8 +89,11 @@ namespace AstroWorld.Enemies.Creature
                 case CreatureState.PlayerHostile:
                     _creatureAgent.stoppingDistance = stopFromPlayer;
                     if (!_attacking &&
-                        CreatureHelpers.IsAngleWithinToleranceLevel(_currentNormalizedAngle, angleToleranceLevel))
+                        CreatureHelpers.IsAngleWithinToleranceLevel(_currentNormalizedAngle,
+                        angleToleranceLevel))
+                    {
                         _coroutine = StartCoroutine(AttackPlayer());
+                    }
                     break;
 
                 case CreatureState.PlayerFound:
@@ -192,8 +195,9 @@ namespace AstroWorld.Enemies.Creature
         {
             _attacking = true;
 
-            float attackingTime = _creatureAttack.Attack(_player, true);
+            float attackingTime = _creatureAttack.AttackTarget(_player, true);
             yield return new WaitForSeconds(attackingTime);
+
             _attacking = false;
         }
 

@@ -1,22 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AstroWorld.Enemies.Base;
 using UnityEngine;
 
 namespace AstroWorld.Enemies.Creature
 {
-    public class CreatureAttack : MonoBehaviour
+    public class CreatureAttack : Attack
     {
-        [Header("Effects")]
-        public GameObject droidBullet;
-        public GameObject launchEffect;
-
-        [Header("Launch Points")]
-        public Transform[] launchPoints;
-
-        [Header("Launch Stats")]
-        public float attackTime;
-        public float playerBaseOffset;
-        public float launchSpeed;
 
         [Header("Attack Animations")]
         public float timeDiffSameAttack;
@@ -28,16 +18,16 @@ namespace AstroWorld.Enemies.Creature
 
         private const string AttackAnimationParam = "Attacking";
 
-        public float Attack(Transform target, bool usePlayerOffset = false)
+        public override float AttackTarget(Transform target, bool usePlayerOffset = false)
         {
             _target = target;
             _usePlayerOffset = usePlayerOffset;
             droidAnimator.SetBool(AttackAnimationParam, true);
 
-            return attackTime;
+            return base.attackTime;
         }
 
-        public void EndAttack() => droidAnimator.SetBool(AttackAnimationParam, false);
+        public override void EndAttack() => droidAnimator.SetBool(AttackAnimationParam, false);
 
         public void AttackTarget()
         {
@@ -49,23 +39,23 @@ namespace AstroWorld.Enemies.Creature
         {
             yield return new WaitForSeconds(delayTime);
 
-            for (int i = 0; i < launchPoints.Length; i++)
+            for (int i = 0; i < base.launchPoints.Length; i++)
             {
-                Vector3 position = _usePlayerOffset ? _target.position +
-                    Vector3.up * playerBaseOffset :
+                Vector3 position = _usePlayerOffset ?
+                    _target.position + Vector3.up * base.playerBaseOffset :
                     _target.position;
 
-                Quaternion lookRotation = Quaternion
-                    .LookRotation(position - launchPoints[i].position);
-                launchPoints[i].transform.rotation = lookRotation;
+                Quaternion lookRotation = Quaternion.LookRotation(position -
+                    base.launchPoints[i].position);
+                base.launchPoints[i].transform.rotation = lookRotation;
 
-                Instantiate(launchEffect, launchPoints[i].position, lookRotation);
+                Instantiate(base.launchEffect, base.launchPoints[i].position, lookRotation);
 
-                GameObject bulletInstance = Instantiate(droidBullet,
-                    launchPoints[i].transform.position, Quaternion.identity);
+                GameObject bulletInstance = Instantiate(base.droidBullet,
+                    base.launchPoints[i].transform.position, Quaternion.identity);
                 bulletInstance.transform.rotation = lookRotation;
                 bulletInstance.GetComponent<Rigidbody>().velocity =
-                    launchPoints[i].transform.forward * launchSpeed;
+                    base.launchPoints[i].transform.forward * base.launchSpeed;
             }
         }
     }

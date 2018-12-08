@@ -1062,13 +1062,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droidBullet: {fileID: 0}
   launchEffect: {fileID: 0}
-  launchPoints: []
-  attackTime: 0
-  playerBaseOffset: 0
-  launchSpeed: 0
-  timeDiffSameAttack: 0
-  totalAttackTimes: 0
-  droidAnimator: {fileID: 0}
+  launchPoints:
+  - {fileID: 4273669365526554}
+  attackTime: 3
+  playerBaseOffset: 1.5
+  launchSpeed: 20
+  timeDiffSameAttack: 0.3
+  totalAttackTimes: 2
+  droidAnimator: {fileID: 95567240602797694}
 --- !u!114 &114351226738387012
 MonoBehaviour:
   m_ObjectHideFlags: 1
