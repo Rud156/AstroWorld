@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 114107864890470732}
   - component: {fileID: 114179997660871678}
   - component: {fileID: 114918411454236904}
+  - component: {fileID: 114218021214642482}
   m_Layer: 0
   m_Name: SciFiEngineer
   m_TagString: Player
@@ -1757,6 +1758,21 @@ MonoBehaviour:
   raycastPoint: {fileID: 4987238073678918}
   maxDistance: 20
   maxAngleAllowed: 30
+--- !u!114 &114218021214642482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819722896125644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddafdfb8c47a6d4c859f05094a35154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserCannon: {fileID: 1579032276637034, guid: 09adcb500222ae044adff747474b6265,
+    type: 2}
+  spawnBeforeDistance: 5
+  collectionTime: 3
 --- !u!114 &114247442445902876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1887,7 +1903,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthAmount: 250
   deathEffect: {fileID: 0}
-  effectInstantiatePoint: {fileID: 4766861928708454}
   destoryOnZero: 1
 --- !u!136 &136897421524412760
 CapsuleCollider:

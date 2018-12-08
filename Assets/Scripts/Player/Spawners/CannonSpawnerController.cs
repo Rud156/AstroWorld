@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using AstroWorld.Extras;
 using AstroWorld.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AstroWorld.Player.Spawners
 {
     public class CannonSpawnerController : MonoBehaviour
     {
+        [Header("Main Object")]
         public GameObject laserCannon;
+
+        [Header("Stats")]
         [Range(3, 10)]
         public float spawnBeforeDistance;
         public float collectionTime;
@@ -17,6 +19,7 @@ namespace AstroWorld.Player.Spawners
         private float _currentCollectionTime;
         private bool _cannonSpawned;
 
+        private Image _displayImage;
         private GameObject _cannonInstance;
 
         /// <summary>
@@ -36,7 +39,6 @@ namespace AstroWorld.Player.Spawners
         {
             if (other.CompareTag(TagManager.Cannon))
                 _cannonInRange = true;
-
         }
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace AstroWorld.Player.Spawners
             {
                 _cannonInRange = false;
                 _currentCollectionTime = collectionTime;
+                _displayImage.enabled = false;
             }
         }
 
@@ -60,11 +63,14 @@ namespace AstroWorld.Player.Spawners
             if (Input.GetKeyDown(Controls.LaserSpawnKey))
             {
                 if (_cannonInstance == null)
+                {
                     _cannonInstance = Instantiate(
                          laserCannon,
                          transform.position + transform.forward * spawnBeforeDistance,
                          laserCannon.transform.rotation
                      );
+                    _displayImage = _cannonInstance.GetComponentInChildren<Image>();
+                }
                 else
                 {
                     _cannonInstance.SetActive(true);
@@ -73,6 +79,7 @@ namespace AstroWorld.Player.Spawners
                 }
 
                 _cannonSpawned = true;
+                _displayImage.enabled = false;
             }
         }
 
@@ -84,11 +91,16 @@ namespace AstroWorld.Player.Spawners
             if (Input.GetKey(Controls.LaserSpawnKey) && _cannonInRange)
                 _currentCollectionTime -= Time.deltaTime;
 
+            _displayImage.enabled = true;
+            _displayImage.fillAmount = ExtensionFunctions.Map(_currentCollectionTime, 0, collectionTime,
+                0, 1);
+
             if (_currentCollectionTime <= 0)
             {
                 _cannonInstance.SetActive(false);
                 _cannonSpawned = false;
                 _currentCollectionTime = collectionTime;
+                _displayImage.enabled = false;
             }
         }
     }
