@@ -12,7 +12,6 @@ namespace AstroWorld.Common
 
         public float maxHealthAmount;
         public GameObject deathEffect;
-        public Transform effectInstantiatePoint;
         public bool destoryOnZero = true;
 
         private float _currentHealthAmount;
@@ -65,7 +64,7 @@ namespace AstroWorld.Common
         private void SpawnDestroyEffect()
         {
             GameObject particleEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            particleEffect.transform.position = effectInstantiatePoint.position;
+            particleEffect.transform.position = transform.position;
         }
     }
 }

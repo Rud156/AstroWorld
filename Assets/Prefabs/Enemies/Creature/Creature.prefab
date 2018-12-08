@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 114619981439892486}
   - component: {fileID: 114351226738387012}
   - component: {fileID: 114224813620294760}
+  - component: {fileID: 114473164052717162}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -1132,6 +1133,21 @@ MonoBehaviour:
   lookingPoint: {fileID: 4253455210318156}
   lookAngle: 180
   angleToleranceLevel: 20
+--- !u!114 &114473164052717162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79128d7cee7543f49b0b74df839f0dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthAmount: 50
+  deathEffect: {fileID: 1499469565894642, guid: 2d93ef2905238d54a9f38ed3097a5a8f,
+    type: 2}
+  destoryOnZero: 1
 --- !u!114 &114619981439892486
 MonoBehaviour:
   m_ObjectHideFlags: 1
