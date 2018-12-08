@@ -8,5 +8,6 @@ namespace AstroWorld.Utils
     {
         public const string Player = "Player";
         public const string EnemyHolder = "EnemyHolder";
+        public const string Cannon = "Cannon";
     }
 }

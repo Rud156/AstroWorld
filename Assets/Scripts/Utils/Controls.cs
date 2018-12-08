@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace AstroWorld.Utils
 {
     public static class Controls
@@ -9,5 +11,8 @@ namespace AstroWorld.Utils
         // Mouse
         public const string MouseX = "Mouse X";
         public const string MouseY = "Mouse Y";
+
+        // Keyboard Bindings
+        public const KeyCode LaserSpawnKey = KeyCode.Q;
     }
 }

@@ -135,9 +135,10 @@ GameObject:
   - component: {fileID: 114503902889054864}
   - component: {fileID: 114724574280708188}
   - component: {fileID: 114445032910979802}
+  - component: {fileID: 65471680665633840}
   m_Layer: 0
   m_Name: Tiny Cannon
-  m_TagString: Untagged
+  m_TagString: Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579032276637034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 414.38, y: 100, z: 72.5}
+  m_LocalPosition: {x: 412.41104, y: 100, z: 71.631676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4422530308040920}
@@ -729,6 +730,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099474234032314}
   m_Mesh: {fileID: 4300012, guid: ebe3e5b990c8d7e4e8caae18ae27db00, type: 3}
+--- !u!65 &65471680665633840
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579032276637034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &114445032910979802
 MonoBehaviour:
   m_ObjectHideFlags: 1

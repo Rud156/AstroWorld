@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AstroWorld.Utils;
 using UnityEngine;
 
 namespace AstroWorld.Spawners
@@ -7,12 +8,13 @@ namespace AstroWorld.Spawners
     public class EnemySpawner : MonoBehaviour
     {
         public GameObject enemy;
-        public Transform enemyHolder;
         public float initialSpawnCount;
         public Transform[] spawningPoints;
 
         [Header("Debug")]
         public bool spawnOnStart;
+
+        private Transform _enemyHolder;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -20,6 +22,8 @@ namespace AstroWorld.Spawners
         /// </summary>
         void Start()
         {
+            _enemyHolder = GameObject.FindGameObjectWithTag(TagManager.EnemyHolder)?.transform;
+
             if (spawnOnStart)
                 StartSpawn();
         }
@@ -32,7 +36,7 @@ namespace AstroWorld.Spawners
                 Vector3 spawnPoint = spawningPoints[randomIndex].position;
 
                 GameObject enemyInstance = Instantiate(enemy, spawnPoint, enemy.transform.rotation);
-                enemyInstance.transform.SetParent(enemyHolder);
+                enemyInstance.transform.SetParent(_enemyHolder);
             }
         }
     }
