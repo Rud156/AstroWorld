@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1256688739368894, guid: 3ecb58a70807baf40be0e954c17e3c40, type: 2}
-  enemyHolder: {fileID: 0}
+  enemyHolder: {fileID: 288228041}
   initialSpawnCount: 30
   spawningPoints:
   - {fileID: 1744182979}
