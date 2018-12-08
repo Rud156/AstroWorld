@@ -4,7 +4,8 @@ using UnityEngine.AI;
 
 namespace AstroWorld.Enemies.Creature
 {
-    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(CreatureAttack))]
+    [RequireComponent(typeof(CreatureLaze))]
     [RequireComponent(typeof(NavMeshAgent))]
     public class CreaturePatrol : MonoBehaviour
     {
@@ -26,8 +27,12 @@ namespace AstroWorld.Enemies.Creature
         [Header("NavMesh")]
         public float maxHeight;
 
-        [Header("Times")]
-        public float lazingTime;
+        [Header("Eyes")]
+        public Transform lookingPoint;
+        [Range(0, 360)]
+        public int lookAngle;
+        [Range(0, 20)]
+        public int angleToleranceLevel;
 
         private NavMeshAgent _creatureAgent;
         private Vector3[] _vertices;
@@ -35,7 +40,11 @@ namespace AstroWorld.Enemies.Creature
         private Transform _currentTarget;
         private Transform _player;
 
+        private CreatureAttack _creatureAttack;
+        private CreatureLaze _creatureLaze;
+
         private CreatureState _creatureState;
+        private float _currentNormalizedAngle;
         private Vector3 _targetVertex;
 
         private Coroutine _coroutine;
@@ -50,6 +59,8 @@ namespace AstroWorld.Enemies.Creature
         void Start()
         {
             _creatureAgent = GetComponent<NavMeshAgent>();
+            _creatureAttack = GetComponent<CreatureAttack>();
+            _creatureLaze = GetComponent<CreatureLaze>();
 
             _player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
@@ -77,7 +88,8 @@ namespace AstroWorld.Enemies.Creature
             {
                 case CreatureState.PlayerHostile:
                     _creatureAgent.stoppingDistance = stopFromPlayer;
-                    if (!_attacking)
+                    if (!_attacking &&
+                        CreatureHelpers.IsAngleWithinToleranceLevel(_currentNormalizedAngle, angleToleranceLevel))
                         _coroutine = StartCoroutine(AttackPlayer());
                     break;
 
@@ -104,16 +116,22 @@ namespace AstroWorld.Enemies.Creature
         {
             if (_creatureState == CreatureState.PlayerHostile)
                 SetPlayerTarget();
-            // TODO: Change to FOV later if there is time
-            else if (Vector3.Distance(transform.position, _player.position) <= maximumDetectionDistance)
+            else
             {
-                _creatureState = CreatureState.PlayerFound;
-                SetPlayerTarget();
-            }
-            else if (_creatureState == CreatureState.PlayerFound)
-            {
-                _creatureState = CreatureState.Idle;
-                SelectRandomPatrolPoint();
+                float angleWRTTarget = CreatureHelpers
+                    .CheckTargetInsideFOV(_player, maximumDetectionDistance, lookAngle, lookingPoint);
+
+                if (angleWRTTarget != -1)
+                {
+                    _creatureState = CreatureState.PlayerFound;
+                    _currentNormalizedAngle = angleWRTTarget;
+                    SetPlayerTarget();
+                }
+                else if (_creatureState == CreatureState.PlayerFound)
+                {
+                    _creatureState = CreatureState.Idle;
+                    SelectRandomPatrolPoint();
+                }
             }
         }
 
@@ -174,13 +192,16 @@ namespace AstroWorld.Enemies.Creature
         {
             _attacking = true;
 
-            yield return new WaitForSeconds(5);
+            float attackingTime = _creatureAttack.Attack(_player, true);
+            yield return new WaitForSeconds(attackingTime);
             _attacking = false;
         }
 
         private IEnumerator LazeAroundPoint()
         {
             _lazingAround = true;
+
+            float lazingTime = _creatureLaze.LazeAroundSpot();
             yield return new WaitForSeconds(lazingTime);
 
             _lazingAround = false;

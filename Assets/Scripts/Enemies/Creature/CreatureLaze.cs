@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreatureLaze : MonoBehaviour {
+public class CreatureLaze : MonoBehaviour
+{
+    public float waitForAnimationTime = 10f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float LazeAroundSpot() => waitForAnimationTime;
 }

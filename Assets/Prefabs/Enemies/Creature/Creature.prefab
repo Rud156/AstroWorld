@@ -129,6 +129,8 @@ GameObject:
   - component: {fileID: 65936386181750200}
   - component: {fileID: 114388959457917638}
   - component: {fileID: 114619981439892486}
+  - component: {fileID: 114351226738387012}
+  - component: {fileID: 114224813620294760}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -1047,6 +1049,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114224813620294760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf6ef13110b26140a9774d0435cb955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droidBullet: {fileID: 0}
+  launchEffect: {fileID: 0}
+  launchPoints: []
+  attackTime: 0
+  playerBaseOffset: 0
+  launchSpeed: 0
+  timeDiffSameAttack: 0
+  totalAttackTimes: 0
+  droidAnimator: {fileID: 0}
+--- !u!114 &114351226738387012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018d141a2f5184a42b5e25dd1be2d804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitForAnimationTime: 10
 --- !u!114 &114388959457917638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1063,7 +1097,9 @@ MonoBehaviour:
   maximumDetectionDistance: 20
   lookRotationSpeed: 10
   maxHeight: 120
-  lazingTime: 7
+  lookingPoint: {fileID: 0}
+  lookAngle: 0
+  angleToleranceLevel: 0
 --- !u!114 &114619981439892486
 MonoBehaviour:
   m_ObjectHideFlags: 1
