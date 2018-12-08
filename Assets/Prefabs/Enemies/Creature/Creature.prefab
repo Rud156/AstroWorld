@@ -127,6 +127,8 @@ GameObject:
   - component: {fileID: 95567240602797694}
   - component: {fileID: 195654094070154952}
   - component: {fileID: 65936386181750200}
+  - component: {fileID: 114388959457917638}
+  - component: {fileID: 114619981439892486}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -965,7 +967,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256688739368894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 413.864, y: 100, z: 71.56753}
+  m_LocalPosition: {x: 413.864, y: 100, z: 108.65}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4356380918373946}
@@ -1045,6 +1047,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114388959457917638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58b195eb3ffb9d4c81cac430a316be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopFromPlayer: 5
+  stopFromPoint: 0
+  maximumDetectionDistance: 20
+  lookRotationSpeed: 10
+  maxHeight: 120
+  lazingTime: 7
+--- !u!114 &114619981439892486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4d40e1d714ee241bee1568614cb368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137015419269092770
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1130,7 +1160,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
