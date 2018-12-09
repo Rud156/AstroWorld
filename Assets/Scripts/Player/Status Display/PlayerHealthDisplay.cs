@@ -36,8 +36,7 @@ namespace AstroWorld.Player.StatusDisplay
             float healthRatio = currentHealth / maxHealth;
 
             if (healthRatio > 0.5f)
-                healthFiller.color = Color.Lerp(maxHealthColor, halfHealthColor,
-                    (healthRatio - 0.5f) * 2);
+                healthFiller.color = Color.Lerp(halfHealthColor, maxHealthColor, (healthRatio - 0.5f) * 2);
             else
                 healthFiller.color = Color.Lerp(minHealthColor, halfHealthColor, healthRatio * 2);
 

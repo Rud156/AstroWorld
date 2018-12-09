@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace AstroWorld.Player.Movement
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class ControlSlopeClimb : MonoBehaviour
     {
         public Transform raycastPoint;

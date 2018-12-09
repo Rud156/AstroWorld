@@ -23,6 +23,12 @@ namespace AstroWorld.Player.Spawners
         private GameObject _cannonInstance;
 
         /// <summary>
+        /// Start is called on the frame when a script is enabled just before
+        /// any of the Update methods is called the first time.
+        /// </summary>
+        void Start() => _currentCollectionTime = collectionTime;
+
+        /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
         void Update()
@@ -50,8 +56,7 @@ namespace AstroWorld.Player.Spawners
             if (other.CompareTag(TagManager.Cannon))
             {
                 _cannonInRange = false;
-                _currentCollectionTime = collectionTime;
-                _displayImage.enabled = false;
+                ResetTimerImage();
             }
         }
 
@@ -65,21 +70,21 @@ namespace AstroWorld.Player.Spawners
                 if (_cannonInstance == null)
                 {
                     _cannonInstance = Instantiate(
-                         laserCannon,
-                         transform.position + transform.forward * spawnBeforeDistance,
-                         laserCannon.transform.rotation
-                     );
+                        laserCannon,
+                        transform.parent.position + transform.parent.forward * spawnBeforeDistance,
+                        laserCannon.transform.rotation
+                    );
                     _displayImage = _cannonInstance.GetComponentInChildren<Image>();
                 }
                 else
                 {
                     _cannonInstance.SetActive(true);
-                    _cannonInstance.transform.position = transform.position +
-                        transform.forward * spawnBeforeDistance;
+                    _cannonInstance.transform.position = transform.parent.position +
+                        transform.parent.forward * spawnBeforeDistance;
                 }
 
                 _cannonSpawned = true;
-                _displayImage.enabled = false;
+                ResetTimerImage();
             }
         }
 
@@ -89,19 +94,27 @@ namespace AstroWorld.Player.Spawners
                 return;
 
             if (Input.GetKey(Controls.LaserSpawnKey) && _cannonInRange)
-                _currentCollectionTime -= Time.deltaTime;
-
-            _displayImage.enabled = true;
-            _displayImage.fillAmount = ExtensionFunctions.Map(_currentCollectionTime, 0, collectionTime,
-                0, 1);
-
-            if (_currentCollectionTime <= 0)
             {
-                _cannonInstance.SetActive(false);
-                _cannonSpawned = false;
-                _currentCollectionTime = collectionTime;
-                _displayImage.enabled = false;
+                _currentCollectionTime -= Time.deltaTime;
+                _displayImage.enabled = true;
+                _displayImage.fillAmount =
+                    ExtensionFunctions.Map(_currentCollectionTime, 0, collectionTime, 0, 1);
+
+                if (_currentCollectionTime <= 0)
+                {
+                    _cannonInstance.SetActive(false);
+                    _cannonSpawned = false;
+                    ResetTimerImage();
+                }
             }
+            else if (!Input.GetKey(Controls.LaserSpawnKey))
+                ResetTimerImage();
+        }
+
+        private void ResetTimerImage()
+        {
+            _currentCollectionTime = collectionTime;
+            _displayImage.enabled = false;
         }
     }
 }

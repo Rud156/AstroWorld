@@ -417,8 +417,9 @@ GameObject:
   - component: {fileID: 4799353301447870}
   - component: {fileID: 65816953074932998}
   - component: {fileID: 54511217598704416}
+  - component: {fileID: 114449758328569630}
   m_Layer: 0
-  m_Name: Object Range Detector
+  m_Name: Object Detector And Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,7 +652,6 @@ GameObject:
   - component: {fileID: 114107864890470732}
   - component: {fileID: 114179997660871678}
   - component: {fileID: 114918411454236904}
-  - component: {fileID: 114218021214642482}
   m_Layer: 0
   m_Name: SciFiEngineer
   m_TagString: Player
@@ -1758,21 +1758,6 @@ MonoBehaviour:
   raycastPoint: {fileID: 4987238073678918}
   maxDistance: 20
   maxAngleAllowed: 30
---- !u!114 &114218021214642482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1819722896125644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddafdfb8c47a6d4c859f05094a35154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserCannon: {fileID: 1579032276637034, guid: 09adcb500222ae044adff747474b6265,
-    type: 2}
-  spawnBeforeDistance: 5
-  collectionTime: 3
 --- !u!114 &114247442445902876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1803,6 +1788,21 @@ MonoBehaviour:
   movementSpeed: 150
   runningSpeed: 300
   animatorLerpRate: 7
+--- !u!114 &114449758328569630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525242628027926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddafdfb8c47a6d4c859f05094a35154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserCannon: {fileID: 1579032276637034, guid: 09adcb500222ae044adff747474b6265,
+    type: 2}
+  spawnBeforeDistance: 5
+  collectionTime: 3
 --- !u!114 &114517899190703564
 MonoBehaviour:
   m_ObjectHideFlags: 1
