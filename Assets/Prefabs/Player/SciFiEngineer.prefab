@@ -554,7 +554,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4106764202190384}
-  - component: {fileID: 114792447000764832}
   m_Layer: 0
   m_Name: Main Camera Transform
   m_TagString: Untagged
@@ -650,8 +649,9 @@ GameObject:
   - component: {fileID: 54320871580428980}
   - component: {fileID: 114447420735159304}
   - component: {fileID: 114107864890470732}
-  - component: {fileID: 114179997660871678}
   - component: {fileID: 114918411454236904}
+  - component: {fileID: 114719298874385884}
+  - component: {fileID: 114854464110892002}
   m_Layer: 0
   m_Name: SciFiEngineer
   m_TagString: Player
@@ -1744,20 +1744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 200
---- !u!114 &114179997660871678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1819722896125644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e712cb0170a33414a90c824a7843603f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastPoint: {fileID: 4987238073678918}
-  maxDistance: 20
-  maxAngleAllowed: 30
 --- !u!114 &114247442445902876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1816,12 +1802,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
---- !u!114 &114792447000764832
+--- !u!114 &114719298874385884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1693146579012788}
+  m_GameObject: {fileID: 1819722896125644}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fe4653cee5f2345a397ce41e4db115, type: 3}
@@ -1830,6 +1816,7 @@ MonoBehaviour:
   minCameraAngle: 30
   maxCameraAngle: 340
   verticalSpeed: 50
+  cameraHolder: {fileID: 4106764202190384}
   lockCursor: 1
 --- !u!114 &114806011032766594
 MonoBehaviour:
@@ -1890,6 +1877,20 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &114854464110892002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819722896125644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e712cb0170a33414a90c824a7843603f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastPoint: {fileID: 4987238073678918}
+  maxDistance: 20
+  maxAngleAllowed: 30
 --- !u!114 &114918411454236904
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,11 +6,13 @@ namespace FortBlast.Camera
 {
     public class MoveCameraWithMouse : MonoBehaviour
     {
+        [Header("Controls")]
         public float minCameraAngle = 30;
         public float maxCameraAngle = 340;
         public float verticalSpeed;
 
-        [Header("Debug")]
+        [Header("Camera Options")]
+        public Transform cameraHolder;
         public bool lockCursor;
 
         private float _pitch;
@@ -21,7 +23,7 @@ namespace FortBlast.Camera
         /// </summary>
         void Start()
         {
-            _pitch = transform.localRotation.eulerAngles.x;
+            _pitch = cameraHolder.localRotation.eulerAngles.x;
 
             if (lockCursor)
             {
@@ -39,7 +41,7 @@ namespace FortBlast.Camera
         /// LateUpdate is called every frame, if the Behaviour is enabled.
         /// It is called after all Update functions have been called.
         /// </summary>
-        void LateUpdate() => transform.localRotation = Quaternion.Euler(_pitch, 0, 0);
+        void LateUpdate() => cameraHolder.localRotation = Quaternion.Euler(_pitch, 0, 0);
 
         private void SetAndLimitPitch()
         {
