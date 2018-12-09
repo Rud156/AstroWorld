@@ -1619,7 +1619,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299081805307512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.335, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4766861928708454}
@@ -1787,8 +1787,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserCannon: {fileID: 1579032276637034, guid: 09adcb500222ae044adff747474b6265,
     type: 2}
+  referencePoint: {fileID: 4987238073678918}
   spawnBeforeDistance: 5
   collectionTime: 3
+  cannonSlopeAllowed: 10
 --- !u!114 &114517899190703564
 MonoBehaviour:
   m_ObjectHideFlags: 1

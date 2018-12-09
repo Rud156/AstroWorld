@@ -9,11 +9,13 @@ namespace AstroWorld.Player.Spawners
     {
         [Header("Main Object")]
         public GameObject laserCannon;
+        public Transform referencePoint;
 
         [Header("Stats")]
         [Range(3, 10)]
         public float spawnBeforeDistance;
         public float collectionTime;
+        public float cannonSlopeAllowed = 10;
 
         private bool _cannonInRange;
         private float _currentCollectionTime;
@@ -67,12 +69,15 @@ namespace AstroWorld.Player.Spawners
 
             if (Input.GetKeyDown(Controls.LaserSpawnKey))
             {
+                Vector3 spawnPoint = GetSpawningPoint();
+                if (spawnPoint == Vector3.zero)
+                    return;
+
                 if (_cannonInstance == null)
                 {
-                    // TODO: Fix rotation later
                     _cannonInstance = Instantiate(
                         laserCannon,
-                        GetSpawningPoint(),
+                        spawnPoint,
                         laserCannon.transform.rotation
                     );
                     _displayImage = _cannonInstance.GetComponentInChildren<Image>();
@@ -80,7 +85,7 @@ namespace AstroWorld.Player.Spawners
                 else
                 {
                     _cannonInstance.SetActive(true);
-                    _cannonInstance.transform.position = GetSpawningPoint();
+                    _cannonInstance.transform.position = spawnPoint;
                 }
 
                 _cannonSpawned = true;
@@ -113,14 +118,27 @@ namespace AstroWorld.Player.Spawners
 
         private Vector3 GetSpawningPoint()
         {
-            Vector3 destination = transform.parent.position +
-                transform.parent.forward * spawnBeforeDistance;
+            Vector3 destination = referencePoint.position +
+                referencePoint.forward * spawnBeforeDistance;
 
             RaycastHit hit;
-            if (Physics.Raycast(destination, Vector3.down, out hit))
-                destination = new Vector3(destination.x, hit.point.y, destination.z);
+            if (Physics.Linecast(referencePoint.position, destination, out hit))
+                destination = referencePoint.position + referencePoint.forward * (hit.distance - 1);
 
-            return destination;
+            if (Physics.Raycast(destination, Vector3.down, out hit))
+            {
+                destination = hit.point;
+
+                float angle = Vector3.Angle(hit.normal, transform.forward);
+                float normalizedAngle = ExtensionFunctions.To360Angle(angle);
+
+                if (normalizedAngle - 90 > cannonSlopeAllowed)
+                    return Vector3.zero;
+                else
+                    return destination;
+            }
+
+            return Vector3.zero;
         }
 
         private void ResetTimerImage()
