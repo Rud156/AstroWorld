@@ -1,4 +1,5 @@
 ﻿using AstroWorld.Extras;
+using AstroWorld.Utils;
 using UnityEngine;
 
 namespace AstroWorld.Player.Movement
@@ -7,7 +8,6 @@ namespace AstroWorld.Player.Movement
     public class ControlSlopeClimb : MonoBehaviour
     {
         public Transform raycastPoint;
-        public float maxDistance;
         [Range(0, 360)]
         public float maxAngleAllowed;
 
@@ -28,9 +28,20 @@ namespace AstroWorld.Player.Movement
 
         private void StopPlayerOnExtremeSlope()
         {
-            if (Physics.Raycast(raycastPoint.position, Vector3.down, out _hit, maxDistance))
+            if (Physics.Raycast(raycastPoint.position, Vector3.down, out _hit))
             {
-                float angle = Vector3.Angle(_hit.normal, transform.forward);
+                float moveX = Input.GetAxis(Controls.HorizontalAxis);
+                float moveZ = Input.GetAxis(Controls.VerticalAxis);
+
+                Vector3 playerAxis = transform.forward;
+                if (moveZ < 0)
+                    playerAxis = -transform.forward;
+                else if (moveX > 0)
+                    playerAxis = transform.right;
+                else if (moveX < 0)
+                    playerAxis = -transform.right;
+
+                float angle = Vector3.Angle(_hit.normal, playerAxis);
                 float normalizedAngle = ExtensionFunctions.To360Angle(angle);
 
                 if (normalizedAngle - 90 > maxAngleAllowed)

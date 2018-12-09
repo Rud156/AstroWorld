@@ -1891,7 +1891,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastPoint: {fileID: 4987238073678918}
-  maxDistance: 20
   maxAngleAllowed: 30
 --- !u!114 &114918411454236904
 MonoBehaviour:
