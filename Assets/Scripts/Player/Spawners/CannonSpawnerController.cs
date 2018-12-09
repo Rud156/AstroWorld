@@ -69,9 +69,10 @@ namespace AstroWorld.Player.Spawners
             {
                 if (_cannonInstance == null)
                 {
+                    // TODO: Fix rotation later
                     _cannonInstance = Instantiate(
                         laserCannon,
-                        transform.parent.position + transform.parent.forward * spawnBeforeDistance,
+                        GetSpawningPoint(),
                         laserCannon.transform.rotation
                     );
                     _displayImage = _cannonInstance.GetComponentInChildren<Image>();
@@ -79,8 +80,7 @@ namespace AstroWorld.Player.Spawners
                 else
                 {
                     _cannonInstance.SetActive(true);
-                    _cannonInstance.transform.position = transform.parent.position +
-                        transform.parent.forward * spawnBeforeDistance;
+                    _cannonInstance.transform.position = GetSpawningPoint();
                 }
 
                 _cannonSpawned = true;
@@ -109,6 +109,18 @@ namespace AstroWorld.Player.Spawners
             }
             else if (!Input.GetKey(Controls.LaserSpawnKey))
                 ResetTimerImage();
+        }
+
+        private Vector3 GetSpawningPoint()
+        {
+            Vector3 destination = transform.parent.position +
+                transform.parent.forward * spawnBeforeDistance;
+
+            RaycastHit hit;
+            if (Physics.Raycast(destination, Vector3.down, out hit))
+                destination = new Vector3(destination.x, hit.point.y, destination.z);
+
+            return destination;
         }
 
         private void ResetTimerImage()

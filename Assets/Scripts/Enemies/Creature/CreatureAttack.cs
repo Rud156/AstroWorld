@@ -29,7 +29,8 @@ namespace AstroWorld.Enemies.Creature
 
         public override void EndAttack() => droidAnimator.SetBool(AttackAnimationParam, false);
 
-        public void AttackTarget()
+        // Called From Animator
+        public void AttackPlayer()
         {
             for (int i = 0; i < totalAttackTimes; i++)
                 StartCoroutine(AttackDelayedStart(i * timeDiffSameAttack));

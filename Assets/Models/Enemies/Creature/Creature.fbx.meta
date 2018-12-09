@@ -306,21 +306,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.23795179
-        functionName: AttackTarget
+        functionName: AttackPlayer
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.3614458
-        functionName: AttackTarget
+        functionName: AttackPlayer
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.56979924
-        functionName: AttackTarget
+        functionName: AttackPlayer
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -444,7 +444,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 2
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

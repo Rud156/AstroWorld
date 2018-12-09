@@ -1785,8 +1785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50362d7c274ade543a9dad1933045c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 150
-  runningSpeed: 300
+  movementSpeed: 200
+  runningSpeed: 400
   animatorLerpRate: 7
 --- !u!114 &114449758328569630
 MonoBehaviour:
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   minCameraAngle: 30
   maxCameraAngle: 340
   verticalSpeed: 50
-  lockCursor: 0
+  lockCursor: 1
 --- !u!114 &114806011032766594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79128d7cee7543f49b0b74df839f0dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthAmount: 250
+  maxHealthAmount: 25000
   deathEffect: {fileID: 0}
   destoryOnZero: 1
 --- !u!136 &136897421524412760

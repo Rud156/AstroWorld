@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using AstroWorld.Common;
 using AstroWorld.Utils;
 using UnityEngine;
 using UnityEngine.AI;
@@ -35,6 +36,10 @@ namespace AstroWorld.Enemies.Creature
         [Range(0, 20)]
         public int angleToleranceLevel;
 
+        [Header("NavMesh Point Selection")]
+        public float maxHeightNavMesh = 101f;
+        public int iterationTimes = 50;
+
         private NavMeshAgent _creatureAgent;
         private Vector3[] _vertices;
 
@@ -43,6 +48,7 @@ namespace AstroWorld.Enemies.Creature
 
         private CreatureAttack _creatureAttack;
         private CreatureLaze _creatureLaze;
+        private HealthSetter _healthSetter;
 
         private CreatureState _creatureState;
         private float _currentNormalizedAngle;
@@ -62,6 +68,9 @@ namespace AstroWorld.Enemies.Creature
             _creatureAgent = GetComponent<NavMeshAgent>();
             _creatureAttack = GetComponent<CreatureAttack>();
             _creatureLaze = GetComponent<CreatureLaze>();
+
+            _healthSetter = GetComponent<HealthSetter>();
+            _healthSetter.damageTaken += SetPlayerHostile;
 
             _player = GameObject.FindGameObjectWithTag(TagManager.Player)?.transform;
 
@@ -178,10 +187,17 @@ namespace AstroWorld.Enemies.Creature
 
         private void SelectRandomPointOnNavMesh()
         {
-            int randomIndex = Random.Range(0, 1000) % _vertices.Length;
-            Vector3 vertex = _vertices[randomIndex];
-            Vector3 targetVertex = vertex;
-            _targetVertex = targetVertex;
+            for (int i = 0; i < iterationTimes; i++)
+            {
+                int randomIndex = Mathf.FloorToInt(Random.value * _vertices.Length);
+                Vector3 vertex = _vertices[randomIndex];
+
+                if (vertex.y <= maxHeightNavMesh)
+                {
+                    _targetVertex = vertex;
+                    break;
+                }
+            }
         }
 
         private void ResetAnimationOnPlayer()
@@ -205,6 +221,7 @@ namespace AstroWorld.Enemies.Creature
 
         private IEnumerator LazeAroundPoint()
         {
+            _creatureAgent.ResetPath();
             _lazingAround = true;
 
             float lazingTime = _creatureLaze.LazeAroundSpot();

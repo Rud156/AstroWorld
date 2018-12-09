@@ -16,10 +16,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - Cannon
+  - Bullet
+  - Enemy
+  - EnemyBullet
   - 
   - 
   - 

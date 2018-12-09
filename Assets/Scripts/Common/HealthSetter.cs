@@ -10,6 +10,9 @@ namespace AstroWorld.Common
         public delegate void HealthZero();
         public HealthZero healthZero;
 
+        public delegate void DamageTaken();
+        public DamageTaken damageTaken;
+
         public float maxHealthAmount;
         public GameObject deathEffect;
         public bool destoryOnZero = true;
@@ -36,7 +39,7 @@ namespace AstroWorld.Common
             DamageAmount damageAmountSetter = other.GetComponent<DamageAmount>();
             if (damageAmountSetter != null)
             {
-                Destroy(other.gameObject);
+                damageTaken?.Invoke();
                 ReduceHealth(damageAmountSetter.damageAmount);
             }
         }
