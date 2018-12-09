@@ -147,6 +147,8 @@ GameObject:
   - component: {fileID: 114351226738387012}
   - component: {fileID: 114224813620294760}
   - component: {fileID: 114473164052717162}
+  - component: {fileID: 114034948655502852}
+  - component: {fileID: 114217479610391870}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -1079,6 +1081,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114034948655502852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6f9877e4f33ef4f893d05a77a9babe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 50
+--- !u!114 &114217479610391870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256688739368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc0549443ef5ae498bfb9f9e64e84df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battery: {fileID: 1000010565588344, guid: 686fd8e833c62714e8d90ea73c3873e2, type: 2}
+  enemyRangeToTarget: 20
 --- !u!114 &114224813620294760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1144,7 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79128d7cee7543f49b0b74df839f0dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthAmount: 50
+  maxHealthAmount: 100
   deathEffect: {fileID: 1499469565894642, guid: 2d93ef2905238d54a9f38ed3097a5a8f,
     type: 2}
   destoryOnZero: 1
