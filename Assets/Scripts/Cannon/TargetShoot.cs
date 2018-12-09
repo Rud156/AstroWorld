@@ -21,23 +21,20 @@ namespace AstroWorld.Cannon
         [Header("Time")]
         public float fireRate;
 
-        [Header("Debug")]
-        public bool shootOnStart;
-
         private Transform _target;
         private Coroutine _coroutine;
 
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before
-        /// any of the Update methods is called the first time.
-        /// </summary>
-        void Start()
-        {
-            if (shootOnStart)
-                StartShooting();
-        }
-
         public void SetTarget(Transform target) => _target = target;
+
+        /// <summary>
+        /// This function is called when the object becomes enabled and active.
+        /// </summary>
+        void OnEnable() => StartShooting();
+
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled or inactive.
+        /// </summary>
+        void OnDisable() => StopShooting();
 
         public void StartShooting() => _coroutine = StartCoroutine(ShootTarget());
 

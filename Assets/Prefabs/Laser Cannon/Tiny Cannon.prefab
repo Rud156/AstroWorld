@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBase: {fileID: 4887666268675326}
-  maxDistanceToTarget: 75
+  maxDistanceToTarget: 50
 --- !u!114 &114503902889054864
 MonoBehaviour:
   m_ObjectHideFlags: 1
