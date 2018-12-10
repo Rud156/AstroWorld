@@ -7,6 +7,24 @@ namespace AstroWorld.Spawners
 {
     public class EnemySpawner : MonoBehaviour
     {
+        #region Singleton
+
+        private static EnemySpawner _instance;
+
+        /// <summary>
+        /// Awake is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
+        {
+            if (_instance == null)
+                _instance = this;
+
+            if (_instance != this)
+                Destroy(gameObject);
+        }
+
+        #endregion Singleton
+
         public GameObject enemy;
         public float initialSpawnCount;
         public Transform[] spawningPoints;
@@ -14,7 +32,7 @@ namespace AstroWorld.Spawners
         [Header("Debug")]
         public bool spawnOnStart;
 
-        private Transform _enemyHolder;
+        private Transform _creatureHolder;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -22,7 +40,7 @@ namespace AstroWorld.Spawners
         /// </summary>
         void Start()
         {
-            _enemyHolder = GameObject.FindGameObjectWithTag(TagManager.CreatureHolder)?.transform;
+            _creatureHolder = GameObject.FindGameObjectWithTag(TagManager.CreatureHolder)?.transform;
 
             if (spawnOnStart)
                 StartSpawn();
@@ -36,7 +54,7 @@ namespace AstroWorld.Spawners
                 Vector3 spawnPoint = spawningPoints[randomIndex].position;
 
                 GameObject enemyInstance = Instantiate(enemy, spawnPoint, enemy.transform.rotation);
-                enemyInstance.transform.SetParent(_enemyHolder);
+                enemyInstance.transform.SetParent(_creatureHolder);
             }
         }
     }

@@ -760,6 +760,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4581663198459824, guid: a6770dbde75899e4683b0c19577df5dc,
     type: 2}
   m_PrefabInternal: {fileID: 246808080}
+--- !u!1 &257005081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257005082}
+  - component: {fileID: 257005083}
+  m_Layer: 0
+  m_Name: Drone Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257005082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257005081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679965357}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257005083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257005081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7944418cf9b8fe41a262a440489397d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drone: {fileID: 1948215344035938, guid: a4b1c6af92586ec49aae4620f18b6b03, type: 2}
+  spawnRate: 3
+  spawnPoints:
+  - {fileID: 1744182979}
+  - {fileID: 1012934741}
+  - {fileID: 1967192803}
+  - {fileID: 411977058}
+  - {fileID: 766434423}
+  - {fileID: 1787067836}
+  - {fileID: 312469406}
+  - {fileID: 1461469500}
+  - {fileID: 1524867549}
+  - {fileID: 607886111}
 --- !u!1 &267671402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,6 +3503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2074536703}
+  - {fileID: 257005082}
   m_Father: {fileID: 514067680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4262,7 +4316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044166720}
   m_Layer: 0
-  m_Name: Creature Spawn Points
+  m_Name: Enemy Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4301,7 +4355,7 @@ GameObject:
   - component: {fileID: 2074536703}
   - component: {fileID: 2074536704}
   m_Layer: 0
-  m_Name: Enemy Spawner
+  m_Name: Creature Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
