@@ -22,7 +22,7 @@ namespace AstroWorld.Spawners
         /// </summary>
         void Start()
         {
-            _enemyHolder = GameObject.FindGameObjectWithTag(TagManager.EnemyHolder)?.transform;
+            _enemyHolder = GameObject.FindGameObjectWithTag(TagManager.CreatureHolder)?.transform;
 
             if (spawnOnStart)
                 StartSpawn();

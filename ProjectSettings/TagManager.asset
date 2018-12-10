@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyHolder
   - Cannon
+  - CreatureHolder
+  - DroneHolder
   layers:
   - Default
   - TransparentFX
