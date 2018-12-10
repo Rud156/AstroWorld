@@ -26,9 +26,6 @@ namespace AstroWorld.Enemies.Creature
         [Header("Velocities")]
         public float lookRotationSpeed;
 
-        [Header("NavMesh")]
-        public float maxHeight;
-
         [Header("Eyes")]
         public Transform lookingPoint;
         [Range(0, 360)]

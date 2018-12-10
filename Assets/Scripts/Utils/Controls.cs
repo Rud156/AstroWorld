@@ -12,7 +12,7 @@ namespace AstroWorld.Utils
         public const string MouseX = "Mouse X";
         public const string MouseY = "Mouse Y";
 
-        // Keyboard Bindings
+        // Keyboard Keys Bindings
         public const KeyCode CannonSpawnKey = KeyCode.Q;
         public const KeyCode CannonActivateKey = KeyCode.E;
     }
