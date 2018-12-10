@@ -1,4 +1,5 @@
-﻿using AstroWorld.Extras;
+﻿using AstroWorld.Cannon;
+using AstroWorld.Extras;
 using AstroWorld.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,6 +38,8 @@ namespace AstroWorld.Player.Spawners
         {
             CheckDeployAndCannon();
             CheckAndPickUpCannon();
+
+            CheckAndUseCannon();
         }
 
         /// <summary>
@@ -62,12 +65,18 @@ namespace AstroWorld.Player.Spawners
             }
         }
 
+        private void CheckAndUseCannon()
+        {
+            if (Input.GetKeyDown(Controls.CannonActivateKey) && _cannonInRange)
+                _cannonInstance.GetComponent<SwitchPlayerCannonCamera>().ActivateCannonControl();
+        }
+
         private void CheckDeployAndCannon()
         {
             if (_cannonSpawned)
                 return;
 
-            if (Input.GetKeyDown(Controls.LaserSpawnKey))
+            if (Input.GetKeyDown(Controls.CannonSpawnKey))
             {
                 Vector3 spawnPoint = GetSpawningPoint();
                 if (spawnPoint == Vector3.zero)
@@ -98,7 +107,7 @@ namespace AstroWorld.Player.Spawners
             if (!_cannonSpawned)
                 return;
 
-            if (Input.GetKey(Controls.LaserSpawnKey) && _cannonInRange)
+            if (Input.GetKey(Controls.CannonSpawnKey) && _cannonInRange)
             {
                 _currentCollectionTime -= Time.deltaTime;
                 _displayImage.enabled = true;
@@ -112,7 +121,7 @@ namespace AstroWorld.Player.Spawners
                     ResetTimerImage();
                 }
             }
-            else if (!Input.GetKey(Controls.LaserSpawnKey))
+            else if (!Input.GetKey(Controls.CannonSpawnKey))
                 ResetTimerImage();
         }
 

@@ -1,20 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using AstroWorld.Extras;
 using AstroWorld.Utils;
 using UnityEngine;
 
-namespace AstroWorld.Player.Movement
+namespace AstroWorld.Cannon
 {
-    public class MoveCameraWithMouse : MonoBehaviour
+    public class PlayerCannonControl : MonoBehaviour
     {
-        [Header("Controls")]
-        public float minCameraAngle = 30;
-        public float maxCameraAngle = 340;
+
+        [Header("Moving Parts")]
+        public Transform platformHolder;
+        public Transform weapons;
+
+        [Header("Velocities")]
+        public float horizontalSpeed;
         public float verticalSpeed;
 
-        [Header("Camera Options")]
-        public Transform cameraHolder;
-        public bool lockCursor;
+        [Header("Limiting Angles")]
+        [Range(0, 360)]
+        public int minCameraAngle = 30;
+        [Range(0, 360)]
+        public int maxCameraAngle = 340;
 
+        private float _yaw;
         private float _pitch;
 
         /// <summary>
@@ -23,28 +32,29 @@ namespace AstroWorld.Player.Movement
         /// </summary>
         void Start()
         {
-            _pitch = cameraHolder.localRotation.eulerAngles.x;
-
-            if (lockCursor)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
+            _yaw = platformHolder.rotation.eulerAngles.y;
+            _pitch = weapons.rotation.eulerAngles.x;
         }
 
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
-        void Update() => SetAndLimitPitch();
-
-        /// <summary>
-        /// LateUpdate is called every frame, if the Behaviour is enabled.
-        /// It is called after all Update functions have been called.
-        /// </summary>
-        void LateUpdate() => cameraHolder.localRotation = Quaternion.Euler(_pitch, 0, 0);
-
-        private void SetAndLimitPitch()
+        void Update()
         {
+            RotateVertically();
+            RotateHorizontally();
+        }
+
+        private void RotateHorizontally()
+        {
+            float mouseX = Input.GetAxis(Controls.MouseX);
+            _yaw += mouseX * horizontalSpeed * Time.deltaTime;
+            transform.eulerAngles = Vector3.up * _yaw;
+        }
+
+        private void RotateVertically()
+        {
+
             float mouseY = Input.GetAxis(Controls.MouseY);
             _pitch += -mouseY * verticalSpeed * Time.deltaTime;
 
@@ -61,6 +71,8 @@ namespace AstroWorld.Player.Movement
                 else
                     _pitch = maxCameraAngle;
             }
+
+            weapons.localRotation = Quaternion.Euler(_pitch, 0, 0);
         }
     }
 }
