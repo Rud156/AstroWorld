@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
+using AstroWorld.Common;
 
 namespace AstroWorld.Cannon
 {
@@ -11,8 +13,11 @@ namespace AstroWorld.Cannon
         public GameObject shootEffect;
         public Transform[] launchPoints;
 
-        [Header("Movement Stats")]
+        [Header("Stats")]
         public float launchSpeed;
+        public CameraShakeData cameraShake;
+
+        private const string CannonCameraName = "Cannon Camera";
 
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -37,6 +42,13 @@ namespace AstroWorld.Cannon
                 projectileInstance.GetComponent<Rigidbody>().velocity =
                     launchPoints[i].forward * launchSpeed;
             }
+
+            CameraShaker.GetInstance(CannonCameraName).ShakeOnce(
+                cameraShake.magnitude,
+                cameraShake.roughness,
+                cameraShake.fadeInTime,
+                cameraShake.fadeOutTime
+            );
         }
     }
 }

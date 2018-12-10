@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 81703891153069704}
   - component: {fileID: 114891615170284306}
   - component: {fileID: 114402721060094000}
+  - component: {fileID: 114372006177691052}
   m_Layer: 9
   m_Name: Cannon Camera
   m_TagString: Untagged
@@ -964,6 +965,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLockPoint: {fileID: 4501874327451500}
   cannonCamera: {fileID: 1698982120066882}
+--- !u!114 &114372006177691052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698982120066882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0, y: 0, z: 0.3}
+  DefaultRotInfluence: {x: 0, y: 0, z: 0}
 --- !u!114 &114402721060094000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1041,6 +1055,11 @@ MonoBehaviour:
   - {fileID: 4652073101072842}
   - {fileID: 4491147779113804}
   launchSpeed: 70
+  cameraShake:
+    magnitude: 5
+    roughness: 4
+    fadeInTime: 0.3
+    fadeOutTime: 0.5
 --- !u!114 &114693728166022772
 MonoBehaviour:
   m_ObjectHideFlags: 1
