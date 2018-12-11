@@ -9,24 +9,24 @@ namespace AstroWorld.Spawners
     {
         #region Singleton
 
-        private static CreatureSpawner _instance;
+        public static CreatureSpawner instance;
 
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
         void Awake()
         {
-            if (_instance == null)
-                _instance = this;
+            if (instance == null)
+                instance = this;
 
-            if (_instance != this)
+            if (instance != this)
                 Destroy(gameObject);
         }
 
         #endregion Singleton
 
         public GameObject enemy;
-        public float initialSpawnCount;
+        public int initialSpawnCount;
         public Transform[] spawningPoints;
 
         [Header("Debug")]

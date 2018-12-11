@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Common;
+using AstroWorld.Scenes.Main;
 using UnityEngine;
 
 namespace AstroWorld.Enemies.Creature
@@ -10,6 +11,7 @@ namespace AstroWorld.Enemies.Creature
     {
         public GameObject battery;
         public float enemyAlertRange;
+        public int maxEnemiesForChaos = 5;
 
         private HealthSetter _healthSetter;
 
@@ -34,6 +36,9 @@ namespace AstroWorld.Enemies.Creature
                 if (creaturePatrol != null)
                     creaturePatrol.SetPlayerHostile();
             }
+
+            if (colliders.Length >= maxEnemiesForChaos)
+                GameManager.instance.IncrementChaosLevel();
         }
     }
 }
