@@ -15,7 +15,7 @@ namespace AstroWorld.Enemies.Drone
     public class DroneHealthDisplay : MonoBehaviour
     {
         [Header("Death")]
-        [Range(0, 7)]
+        [Range(0, 3)]
         public float maxDestroyTime;
         public GameObject deathExplosion;
         public float explosionHeightOffset;
