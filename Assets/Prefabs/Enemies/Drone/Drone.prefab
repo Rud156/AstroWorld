@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4876172914630152}
   - component: {fileID: 33368555073628874}
   - component: {fileID: 23235720748428446}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PA_DroneWingLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4246457058383040}
   - component: {fileID: 33143950342915870}
   - component: {fileID: 23442265396483054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PA_DroneBladeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,10 +55,25 @@ GameObject:
   - component: {fileID: 4661437580431192}
   - component: {fileID: 33125067930301716}
   - component: {fileID: 23665616642663292}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PA_DroneWingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1616223884964136
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4699641376733916}
+  m_Layer: 11
+  m_Name: Drone Center
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,7 +87,7 @@ GameObject:
   - component: {fileID: 4662824540774428}
   - component: {fileID: 33180303362965728}
   - component: {fileID: 23346255619248550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PA_DroneBladeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +104,7 @@ GameObject:
   - component: {fileID: 4282703684186620}
   - component: {fileID: 33942959678001140}
   - component: {fileID: 23948506837966402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PA_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +121,7 @@ GameObject:
   - component: {fileID: 4569966875969598}
   - component: {fileID: 33196357725714224}
   - component: {fileID: 23657326733189382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shooting Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +140,11 @@ GameObject:
   - component: {fileID: 54121951498627564}
   - component: {fileID: 65552892893440470}
   - component: {fileID: 195157200609629958}
-  m_Layer: 0
+  - component: {fileID: 114621310436193600}
+  - component: {fileID: 114651755376493406}
+  - component: {fileID: 114562323936156830}
+  - component: {fileID: 114014663348925854}
+  m_Layer: 11
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +161,7 @@ GameObject:
   - component: {fileID: 4438725822456258}
   - component: {fileID: 33242895800819198}
   - component: {fileID: 23201426572876300}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,6 +209,7 @@ Transform:
   - {fileID: 4661437580431192}
   - {fileID: 4569966875969598}
   - {fileID: 4438725822456258}
+  - {fileID: 4699641376733916}
   m_Father: {fileID: 4042326255721040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,6 +265,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4661437580431192}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4699641376733916
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1616223884964136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4282703684186620}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4876172914630152
 Transform:
@@ -599,6 +632,75 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114014663348925854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948215344035938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b8643c24576a64a9b09eb029c76413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthThreshold: -10
+  maxDestroyTime: 5
+  deathExplosion: {fileID: 1667546984162844, guid: ff279db9b7285d44aac109f1f1dbe202,
+    type: 2}
+  smokeSpawnPoint: {fileID: 4699641376733916}
+  droneDamageSmoke: {fileID: 1175103172112042, guid: 53803abee65876d4c9e53350b25317bc,
+    type: 2}
+  thresholdHealthRatio: 0.75
+  minParticles: 10
+  maxParticles: 30
+--- !u!114 &114562323936156830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948215344035938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79128d7cee7543f49b0b74df839f0dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthAmount: 150
+  deathEffect: {fileID: 1667546984162844, guid: ff279db9b7285d44aac109f1f1dbe202,
+    type: 2}
+  destoryOnZero: 0
+--- !u!114 &114621310436193600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948215344035938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b323efdb866b4ab45b20987ca1aef09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBullet: {fileID: 1172362255980826, guid: 0c3f97148fa786848b960e8d3d2c29d2,
+    type: 2}
+  launchEffect: {fileID: 1688836073969784, guid: c4a0609ba613004479bddac1ab78f765,
+    type: 2}
+  launchPoints:
+  - {fileID: 4569966875969598}
+  attackTime: 3
+  playerBaseOffset: 1.5
+  launchSpeed: 70
+--- !u!114 &114651755376493406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948215344035938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9781d3cdcbf4b164081ec0d91f6ca834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookingSpeed: 7
+  movementThreshold: 0.5
 --- !u!195 &195157200609629958
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -608,11 +710,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 30
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

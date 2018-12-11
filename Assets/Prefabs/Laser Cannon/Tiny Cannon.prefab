@@ -1076,7 +1076,7 @@ MonoBehaviour:
   horizontalSpeed: 200
   verticalSpeed: 50
   minCameraAngle: 30
-  maxCameraAngle: 340
+  maxCameraAngle: 300
 --- !u!114 &114891615170284306
 MonoBehaviour:
   m_ObjectHideFlags: 1

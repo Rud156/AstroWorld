@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace AstroWorld.Spawners
 {
-    public class EnemySpawner : MonoBehaviour
+    public class CreatureSpawner : MonoBehaviour
     {
         #region Singleton
 
-        private static EnemySpawner _instance;
+        private static CreatureSpawner _instance;
 
         /// <summary>
         /// Awake is called when the script instance is being loaded.
@@ -53,8 +53,8 @@ namespace AstroWorld.Spawners
                 int randomIndex = Random.Range(0, 1000) % spawningPoints.Length;
                 Vector3 spawnPoint = spawningPoints[randomIndex].position;
 
-                GameObject enemyInstance = Instantiate(enemy, spawnPoint, enemy.transform.rotation);
-                enemyInstance.transform.SetParent(_creatureHolder);
+                GameObject creatureInstance = Instantiate(enemy, spawnPoint, enemy.transform.rotation);
+                creatureInstance.transform.SetParent(_creatureHolder);
             }
         }
     }

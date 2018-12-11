@@ -29,6 +29,9 @@ namespace AstroWorld.Spawners
         public float spawnRate;
         public Transform[] spawnPoints;
 
+        [Header("Debug")]
+        public bool spawnOnStart;
+
         private Transform _droneHolder;
         private Coroutine _coroutine;
 
@@ -36,8 +39,13 @@ namespace AstroWorld.Spawners
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start() =>
+        void Start()
+        {
             _droneHolder = GameObject.FindGameObjectWithTag(TagManager.DroneHolder)?.transform;
+
+            if (spawnOnStart)
+                StartSpawn();
+        }
 
         public void StartSpawn() => _coroutine = StartCoroutine(SpawnDrones());
 
