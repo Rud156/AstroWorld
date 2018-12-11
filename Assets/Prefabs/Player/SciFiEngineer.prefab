@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 65816953074932998}
   - component: {fileID: 54511217598704416}
   - component: {fileID: 114449758328569630}
+  - component: {fileID: 114001588810051478}
   m_Layer: 0
   m_Name: Object Detector And Spawner
   m_TagString: Untagged
@@ -1733,6 +1734,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114001588810051478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525242628027926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75ee6fe5977e8f4c91ba2d29adda11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectionEffect: {fileID: 1785289156127008, guid: 454e2a0de1519564d86ac00f297158e4,
+    type: 2}
 --- !u!114 &114107864890470732
 MonoBehaviour:
   m_ObjectHideFlags: 1
