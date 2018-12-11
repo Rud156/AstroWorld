@@ -11,6 +11,7 @@ namespace AstroWorld.Enemies.Drone
     [RequireComponent(typeof(DroneController))]
     [RequireComponent(typeof(HealthSetter))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Rigidbody))]
     public class DroneHealthDisplay : MonoBehaviour
     {
         [Header("Death")]
@@ -29,11 +30,13 @@ namespace AstroWorld.Enemies.Drone
         public int maxParticles;
 
         private Animator _droneAnimator;
+        private NavMeshAgent _droneAgent;
+        private Rigidbody _droneRB;
         private HealthSetter _healthSetter;
         private DroneController _droneController;
-        private NavMeshAgent _droneAgent;
 
         private List<ParticleSystem> _smokeParticles;
+        private bool _droneDead;
 
         private const string DroneDeadAnimParam = "Dead";
 
@@ -44,8 +47,11 @@ namespace AstroWorld.Enemies.Drone
         void Start()
         {
             _droneAnimator = GetComponent<Animator>();
-            _droneController = GetComponent<DroneController>();
             _droneAgent = GetComponent<NavMeshAgent>();
+            _droneRB = GetComponent<Rigidbody>();
+            _droneController = GetComponent<DroneController>();
+
+            _smokeParticles = new List<ParticleSystem>();
 
             _healthSetter = GetComponent<HealthSetter>();
             _healthSetter.healthZero += DroneDead;
@@ -86,10 +92,19 @@ namespace AstroWorld.Enemies.Drone
 
         private void DroneDead()
         {
+            if (_droneDead)
+                return;
+
+            _droneDead = true;
+
             _droneAnimator.SetBool(DroneDeadAnimParam, true);
             _droneAgent.enabled = false;
             _healthSetter.enabled = false;
             _droneController.enabled = false;
+
+            _droneRB.isKinematic = false;
+            _droneRB.useGravity = true;
+
 
             float currentHealth = _healthSetter.GetCurrentHealth();
             float mappedDestroyTime = ExtensionFunctions.Map(

@@ -55,11 +55,13 @@ namespace AstroWorld.Common
         {
             if (_currentHealthAmount <= 0)
             {
-                SpawnDestroyEffect();
-
                 healthZero?.Invoke();
+
                 if (destoryOnZero)
+                {
                     Destroy(gameObject);
+                    SpawnDestroyEffect();
+                }
             }
         }
 

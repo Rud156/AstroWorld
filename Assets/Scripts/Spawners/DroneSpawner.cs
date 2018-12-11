@@ -53,13 +53,16 @@ namespace AstroWorld.Spawners
 
         private IEnumerator SpawnDrones()
         {
-            yield return new WaitForSeconds(spawnRate);
+            while (true)
+            {
+                yield return new WaitForSeconds(spawnRate);
 
-            int randomIndex = Random.Range(0, 1000) % spawnPoints.Length;
-            Vector3 spawnPoint = spawnPoints[randomIndex].position;
+                int randomIndex = Random.Range(0, 1000) % spawnPoints.Length;
+                Vector3 spawnPoint = spawnPoints[randomIndex].position;
 
-            GameObject droneInstance = Instantiate(drone, spawnPoint, drone.transform.rotation);
-            droneInstance.transform.SetParent(_droneHolder);
+                GameObject droneInstance = Instantiate(drone, spawnPoint, drone.transform.rotation);
+                droneInstance.transform.SetParent(_droneHolder);
+            }
         }
     }
 }
