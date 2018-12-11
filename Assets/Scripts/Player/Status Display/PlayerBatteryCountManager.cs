@@ -27,6 +27,7 @@ namespace AstroWorld.Player.StatusDisplay
         #endregion Singleton
 
         public Image batteryImage;
+        public Text batteryText;
 
         private int _maxBatteryRequired;
         private int _currentBatteryCount;
@@ -40,6 +41,8 @@ namespace AstroWorld.Player.StatusDisplay
         {
             _maxBatteryRequired = Random.Range(10, CreatureSpawner.instance.initialSpawnCount);
             _currentBatteryCount = 0;
+
+            UpdateUIWithCount();
         }
 
         public void CollectBattery()
@@ -48,8 +51,15 @@ namespace AstroWorld.Player.StatusDisplay
             if (_currentBatteryCount >= _maxBatteryRequired)
                 _shipAccessible = true;
 
+            UpdateUIWithCount();
+        }
+
+        private void UpdateUIWithCount()
+        {
             float ratio = Mathf.Clamp01(_currentBatteryCount / _maxBatteryRequired);
             batteryImage.fillAmount = ratio;
+
+            batteryText.text = $"{_currentBatteryCount} / {_maxBatteryRequired}\nBatteries";
         }
 
         public bool IsShipAccessible() => _shipAccessible;
