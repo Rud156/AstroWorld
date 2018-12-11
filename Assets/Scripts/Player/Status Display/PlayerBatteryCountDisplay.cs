@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 namespace AstroWorld.Player.StatusDisplay
 {
-    public class PlayerBatteryCountDisplay : MonoBehaviour
+    public class PlayerBatteryCountManager : MonoBehaviour
     {
         #region Singleton
 
-        public static PlayerBatteryCountDisplay instance;
+        public static PlayerBatteryCountManager instance;
 
         /// <summary>
         /// Awake is called when the script instance is being loaded.

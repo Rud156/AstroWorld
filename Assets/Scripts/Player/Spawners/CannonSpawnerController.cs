@@ -67,7 +67,7 @@ namespace AstroWorld.Player.Spawners
 
         private void CheckAndUseCannon()
         {
-            if (Input.GetKeyDown(Controls.CannonActivateKey) && _cannonInRange)
+            if (Input.GetKeyDown(Controls.InteractionKey) && _cannonInRange)
                 _cannonInstance.GetComponent<SwitchPlayerCannonCamera>().ActivateCannonControl();
         }
 

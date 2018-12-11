@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Spawners;
+using AstroWorld.UI;
 using UnityEngine;
 
 namespace AstroWorld.Scenes.Main
@@ -30,6 +31,12 @@ namespace AstroWorld.Scenes.Main
 
         private int _chaosLevel;
         private bool _chaosCreated;
+
+        /// <summary>
+        /// Start is called on the frame when a script is enabled just before
+        /// any of the Update methods is called the first time.
+        /// </summary>
+        void Start() => Fader.instance.StartFadeIn();
 
         public void IncrementChaosLevel()
         {

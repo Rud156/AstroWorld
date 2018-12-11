@@ -14,6 +14,6 @@ namespace AstroWorld.Utils
 
         // Keyboard Keys Bindings
         public const KeyCode CannonSpawnKey = KeyCode.Q;
-        public const KeyCode CannonActivateKey = KeyCode.E;
+        public const KeyCode InteractionKey = KeyCode.E;
     }
 }

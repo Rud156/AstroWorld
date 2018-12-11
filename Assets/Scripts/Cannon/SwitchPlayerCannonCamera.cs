@@ -42,7 +42,7 @@ namespace AstroWorld.Cannon
 
         private void CheckAndLeaveCannon()
         {
-            if (Input.GetKeyDown(Controls.CannonActivateKey) && _cannonControlActive)
+            if (Input.GetKeyDown(Controls.InteractionKey) && _cannonControlActive)
                 DeactivateCannonControl();
         }
 
