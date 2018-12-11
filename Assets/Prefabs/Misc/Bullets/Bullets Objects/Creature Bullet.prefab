@@ -240,6 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2ead13aa6f62945b3ab0c0dcff6517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayImpact: 1
+  impact: {fileID: 1920897814079858, guid: 597db3698120c214d835d514ec774aa3, type: 2}
 --- !u!135 &135434955183282616
 SphereCollider:
   m_ObjectHideFlags: 1

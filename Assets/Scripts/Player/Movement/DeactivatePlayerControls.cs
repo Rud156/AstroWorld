@@ -34,7 +34,7 @@ namespace AstroWorld.Player.Movement
             _playerAnimator = GetComponent<Animator>();
         }
 
-        public void DisablePlayerControls()
+        public void DisablePlayerControls(bool disableCamera = true)
         {
             _playerLookAtController.enabled = false;
             _moveCameraWithMouse.enabled = false;
@@ -44,17 +44,19 @@ namespace AstroWorld.Player.Movement
             _playerAnimator.SetFloat(ConstantData.HMovement, 0);
             _playerAnimator.SetFloat(ConstantData.VMovement, 0);
 
-            playerCamera.SetActive(false);
+            if (disableCamera)
+                playerCamera.SetActive(false);
         }
 
-        public void EnablePlayerControls()
+        public void EnablePlayerControls(bool enableCamera = true)
         {
             _playerLookAtController.enabled = true;
             _moveCameraWithMouse.enabled = true;
             _playerMovement.enabled = true;
             cannonSpawner.enabled = true;
 
-            playerCamera.SetActive(true);
+            if (enableCamera)
+                playerCamera.SetActive(true);
         }
     }
 }
