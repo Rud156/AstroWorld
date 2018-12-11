@@ -15,9 +15,7 @@ namespace AstroWorld.Enemies.Drone
     public class DroneHealthDisplay : MonoBehaviour
     {
         [Header("Death")]
-        [Range(-20, 0)]
-        public float healthThreshold;
-        [Range(3, 7)]
+        [Range(0, 7)]
         public float maxDestroyTime;
         public GameObject deathExplosion;
 
@@ -105,14 +103,7 @@ namespace AstroWorld.Enemies.Drone
             _droneRB.isKinematic = false;
             _droneRB.useGravity = true;
 
-
-            float currentHealth = _healthSetter.GetCurrentHealth();
-            float mappedDestroyTime = ExtensionFunctions.Map(
-                currentHealth,
-                healthThreshold, 0,
-                maxDestroyTime, 0
-            );
-
+            float mappedDestroyTime = Random.value * maxDestroyTime;
             StartCoroutine(DestroyDrone(mappedDestroyTime));
         }
 

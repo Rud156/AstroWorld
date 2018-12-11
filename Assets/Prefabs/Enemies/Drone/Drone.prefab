@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b8643c24576a64a9b09eb029c76413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthThreshold: -10
+  healthThreshold: -15
   maxDestroyTime: 5
   deathExplosion: {fileID: 1667546984162844, guid: ff279db9b7285d44aac109f1f1dbe202,
     type: 2}

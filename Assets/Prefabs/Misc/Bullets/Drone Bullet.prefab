@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54051069089535688}
   - component: {fileID: 114311761174276836}
   - component: {fileID: 114197152087218252}
+  - component: {fileID: 114439911026910588}
   m_Layer: 12
   m_Name: Drone Bullet
   m_TagString: Untagged
@@ -227,6 +228,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2ead13aa6f62945b3ab0c0dcff6517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114439911026910588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172362255980826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8620b137bfd74f048952a4e511a3dc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 5
 --- !u!135 &135746269561658356
 SphereCollider:
   m_ObjectHideFlags: 1
