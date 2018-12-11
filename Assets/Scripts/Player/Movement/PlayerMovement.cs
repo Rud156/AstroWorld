@@ -47,7 +47,7 @@ namespace AstroWorld.Player.Movement
 
         private void SetAnimator(float moveX, float moveZ, bool runKeyPressed)
         {
-            _playerAnimator.SetFloat(ConstantData.HMovement, moveX);
+            _playerAnimator.SetFloat(PlayerAnimationParams.HMovement, moveX);
             float potentialMoveZ = moveZ;
 
             if (moveZ > 0)
@@ -60,7 +60,7 @@ namespace AstroWorld.Player.Movement
                         animatorLerpRate * Time.deltaTime);
             }
 
-            _playerAnimator.SetFloat(ConstantData.VMovement, potentialMoveZ);
+            _playerAnimator.SetFloat(PlayerAnimationParams.VMovement, potentialMoveZ);
             _prevMoveZ = potentialMoveZ;
         }
 

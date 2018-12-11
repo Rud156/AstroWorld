@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AstroWorld.Player.Data
 {
-    public static class ConstantData
+    public static class PlayerAnimationParams
     {
         public const string HMovement = "Move H";
         public const string VMovement = "Move V";

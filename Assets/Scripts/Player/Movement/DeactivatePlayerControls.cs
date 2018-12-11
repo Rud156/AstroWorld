@@ -41,8 +41,8 @@ namespace AstroWorld.Player.Movement
             _playerMovement.enabled = false;
             cannonSpawner.enabled = false;
 
-            _playerAnimator.SetFloat(ConstantData.HMovement, 0);
-            _playerAnimator.SetFloat(ConstantData.VMovement, 0);
+            _playerAnimator.SetFloat(PlayerAnimationParams.HMovement, 0);
+            _playerAnimator.SetFloat(PlayerAnimationParams.VMovement, 0);
 
             if (disableCamera)
                 playerCamera.SetActive(false);

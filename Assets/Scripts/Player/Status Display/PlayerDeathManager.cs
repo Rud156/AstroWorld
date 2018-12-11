@@ -9,7 +9,7 @@ namespace AstroWorld.Player.StatusDisplay
 {
     [RequireComponent(typeof(HealthSetter))]
     [RequireComponent(typeof(DeactivatePlayerControls))]
-    public class DisplayPlayerDead : MonoBehaviour
+    public class PlayerDeathManager : MonoBehaviour
     {
         private HealthSetter _healthSetter;
         private DeactivatePlayerControls _deactivatePlayer;
@@ -31,7 +31,7 @@ namespace AstroWorld.Player.StatusDisplay
         private void AnimatePlayerDead()
         {
             _deactivatePlayer.DisablePlayerControls(false);
-            _playerAnimator.SetBool(ConstantData.Dead, true);
+            _playerAnimator.SetBool(PlayerAnimationParams.Dead, true);
         }
     }
 }
