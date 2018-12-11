@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drone: {fileID: 1948215344035938, guid: a4b1c6af92586ec49aae4620f18b6b03, type: 2}
-  spawnRate: 3
+  spawnRate: 7
   spawnPoints:
   - {fileID: 823700352}
   - {fileID: 1722374997}
@@ -812,7 +812,7 @@ MonoBehaviour:
   - {fileID: 987767400}
   - {fileID: 1801215900}
   - {fileID: 759490277}
-  spawnOnStart: 1
+  spawnOnStart: 0
 --- !u!1 &267671402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,7 +4737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2074536703
 Transform:
   m_ObjectHideFlags: 0

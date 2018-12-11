@@ -6,14 +6,11 @@ using UnityEngine;
 namespace AstroWorld.Enemies.Creature
 {
     [RequireComponent(typeof(HealthSetter))]
-    [RequireComponent(typeof(DamageAmount))]
     public class AlertNearbyEnemiesOnDead : MonoBehaviour
     {
         public GameObject battery;
-        public float damageRange;
         public float enemyAlertRange;
 
-        private DamageAmount _damageAmount;
         private HealthSetter _healthSetter;
 
         /// <summary>
@@ -22,8 +19,6 @@ namespace AstroWorld.Enemies.Creature
         /// </summary>
         void Start()
         {
-            _damageAmount = GetComponent<DamageAmount>();
-
             _healthSetter = GetComponent<HealthSetter>();
             _healthSetter.healthZero += OnEnemyDead;
         }
@@ -31,16 +26,8 @@ namespace AstroWorld.Enemies.Creature
         private void OnEnemyDead()
         {
             Instantiate(battery, transform.position, Quaternion.identity);
-            Collider[] colliders = Physics.OverlapSphere(transform.position, damageRange);
 
-            foreach (Collider collider in colliders)
-            {
-                HealthSetter healthSetter = collider.GetComponent<HealthSetter>();
-                if (healthSetter != null)
-                    healthSetter.ReduceHealth(_damageAmount.damageAmount);
-            }
-
-            colliders = Physics.OverlapSphere(transform.position, enemyAlertRange);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, enemyAlertRange);
             foreach (Collider collider in colliders)
             {
                 CreaturePatrol creaturePatrol = collider.GetComponent<CreaturePatrol>();

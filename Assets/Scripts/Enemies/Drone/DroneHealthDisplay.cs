@@ -18,6 +18,7 @@ namespace AstroWorld.Enemies.Drone
         [Range(0, 7)]
         public float maxDestroyTime;
         public GameObject deathExplosion;
+        public float explosionHeightOffset;
 
         [Header("Drone Damage")]
         public Transform smokeSpawnPoint;
@@ -111,7 +112,11 @@ namespace AstroWorld.Enemies.Drone
         {
 
             yield return new WaitForSeconds(destroyTime);
-            Instantiate(deathExplosion, transform.position, Quaternion.identity);
+            Instantiate(
+                deathExplosion,
+                transform.position + Vector3.up * explosionHeightOffset,
+                Quaternion.identity
+            );
 
             Destroy(gameObject);
         }

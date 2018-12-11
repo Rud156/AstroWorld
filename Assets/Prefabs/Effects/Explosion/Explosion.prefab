@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4845938078021522}
   - component: {fileID: 198038194281108552}
   - component: {fileID: 199096309990836652}
+  - component: {fileID: 114149899193992460}
+  - component: {fileID: 114312599196892462}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -103,6 +105,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114149899193992460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499469565894642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6f9877e4f33ef4f893d05a77a9babe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 50
+--- !u!114 &114312599196892462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499469565894642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe8f4dfe52b3b499203d124de2a03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageRange: 15
 --- !u!198 &198038194281108552
 ParticleSystem:
   m_ObjectHideFlags: 1
