@@ -1,5 +1,6 @@
 ﻿using AstroWorld.Cannon;
 using AstroWorld.Extras;
+using AstroWorld.Player.StatusDisplay;
 using AstroWorld.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ namespace AstroWorld.Player.Spawners
         public float collectionTime;
         public float cannonSlopeAllowed = 10;
 
+        private PlayerDeathController _playerDeathController;
+
         private bool _cannonInRange;
         private float _currentCollectionTime;
         private bool _cannonSpawned;
@@ -29,7 +32,11 @@ namespace AstroWorld.Player.Spawners
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start() => _currentCollectionTime = collectionTime;
+        void Start()
+        {
+            _currentCollectionTime = collectionTime;
+            _playerDeathController = GetComponentInParent<PlayerDeathController>();
+        }
 
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -90,6 +97,9 @@ namespace AstroWorld.Player.Spawners
                         laserCannon.transform.rotation
                     );
                     _displayImage = _cannonInstance.GetComponentInChildren<Image>();
+                    _playerDeathController.SetCannonController(
+                        _cannonInstance.GetComponent<SwitchPlayerCannonCamera>()
+                    );
                 }
                 else
                 {

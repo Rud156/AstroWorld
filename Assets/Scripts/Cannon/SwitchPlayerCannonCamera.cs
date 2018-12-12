@@ -19,6 +19,7 @@ namespace AstroWorld.Cannon
         private PlayerCannonControl _playerCannonControl;
 
         private bool _cannonControlActive;
+        private bool _useCannonControl;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -32,6 +33,7 @@ namespace AstroWorld.Cannon
             _player = GameObject.FindGameObjectWithTag(TagManager.Player)?.transform;
             _deactivatePlayer = _player.GetComponent<DeactivatePlayerControls>();
 
+            _useCannonControl = true;
             DeactivateCannonControl();
         }
 
@@ -48,6 +50,9 @@ namespace AstroWorld.Cannon
 
         public void ActivateCannonControl()
         {
+            if (!_useCannonControl)
+                return;
+
             cannonCamera.SetActive(true);
             _deactivatePlayer.DisablePlayerControls();
 
@@ -61,6 +66,9 @@ namespace AstroWorld.Cannon
 
         public void DeactivateCannonControl()
         {
+            if (!_useCannonControl)
+                return;
+
             cannonCamera.SetActive(false);
             _player.SetParent(null);
 
@@ -70,6 +78,10 @@ namespace AstroWorld.Cannon
             _playerCannonShoot.enabled = false;
             _cannonControlActive = false;
         }
+
+        public void MakeCannonUsable() => _useCannonControl = true;
+
+        public void MakeCannonUnusable() => _useCannonControl = false;
 
         IEnumerator DelayCannonActivation()
         {

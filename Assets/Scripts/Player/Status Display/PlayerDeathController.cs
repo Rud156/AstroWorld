@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AstroWorld.Cannon;
 using AstroWorld.Common;
 using AstroWorld.Player.Data;
 using AstroWorld.Player.Movement;
@@ -9,11 +10,12 @@ namespace AstroWorld.Player.StatusDisplay
 {
     [RequireComponent(typeof(HealthSetter))]
     [RequireComponent(typeof(DeactivatePlayerControls))]
-    public class PlayerDeathManager : MonoBehaviour
+    public class PlayerDeathController : MonoBehaviour
     {
         private HealthSetter _healthSetter;
         private DeactivatePlayerControls _deactivatePlayer;
         private Animator _playerAnimator;
+        private SwitchPlayerCannonCamera _switchPlayerCannon;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -28,8 +30,17 @@ namespace AstroWorld.Player.StatusDisplay
             _healthSetter.healthZero += AnimatePlayerDead;
         }
 
+        public void SetCannonController(SwitchPlayerCannonCamera switchPlayerCannon) =>
+            _switchPlayerCannon = switchPlayerCannon;
+
         private void AnimatePlayerDead()
         {
+            if (_switchPlayerCannon == null)
+            {
+                _switchPlayerCannon.DeactivateCannonControl();
+                _switchPlayerCannon.MakeCannonUnusable();
+            }
+
             _deactivatePlayer.DisablePlayerControls(false);
             _playerAnimator.SetBool(PlayerAnimationParams.Dead, true);
         }
