@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Scenes.Loading;
+using AstroWorld.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,9 +32,32 @@ namespace AstroWorld.Scenes.Main
         /// </summary>
         private void Start() => pauseMenu.SetActive(false);
 
+        /// <summary>
+        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
+        {
+            if (Input.GetKeyDown(Controls.CloseKey))
+                PauseGame();
+        }
+
+        /// <summary>
+        /// Callback sent to all game objects when the player pauses.
+        /// </summary>
+        /// <param name="pauseStatus">The pause state of the application.</param>
+        void OnApplicationPause(bool pauseStatus)
+        {
+            if (pauseStatus)
+                PauseGame();
+        }
+
+
         public void PauseGame()
         {
             pauseMenu.SetActive(true);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
 
             Time.timeScale = 0;
         }
@@ -41,6 +65,9 @@ namespace AstroWorld.Scenes.Main
         public void ResumeGame()
         {
             pauseMenu.SetActive(false);
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
 
             Time.timeScale = 1;
         }

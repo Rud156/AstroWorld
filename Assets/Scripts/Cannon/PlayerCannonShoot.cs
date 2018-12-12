@@ -10,6 +10,7 @@ namespace AstroWorld.Cannon
     {
         [Header("Launch Objects")]
         public GameObject laserBurst;
+        public GameObject shotEffect;
         public GameObject shootEffect;
         public Transform[] launchPoints;
 
@@ -49,6 +50,7 @@ namespace AstroWorld.Cannon
                 cameraShake.fadeInTime,
                 cameraShake.fadeOutTime
             );
+            Instantiate(shotEffect, transform.position, Quaternion.identity);
         }
     }
 }

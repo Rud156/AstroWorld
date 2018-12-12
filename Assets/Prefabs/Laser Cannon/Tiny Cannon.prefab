@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserBurst: {fileID: 1133206281222358, guid: bb0509f8c82caa940ac28d17c9531695, type: 2}
+  shotEffect: {fileID: 1099936285614038, guid: 2a3f6a9d6c5686444aca78ad64c102d2, type: 2}
   shootEffect: {fileID: 1309149587262186, guid: 509b135ac857b5443941cad347ebf02d,
     type: 2}
   launchPoints:

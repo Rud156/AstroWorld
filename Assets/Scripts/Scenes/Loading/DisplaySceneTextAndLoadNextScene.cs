@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace AstroWorld.Scenes.Loading
 {
-    public class DisplaySceneText : MonoBehaviour
+    public class DisplaySceneTextAndLoadNextScene : MonoBehaviour
     {
         public float waitForDisplayTime = 3;
         public GameObject infoText;

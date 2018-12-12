@@ -16,6 +16,9 @@ namespace AstroWorld.Player.StatusDisplay
         private DeactivatePlayerControls _deactivatePlayer;
         private Animator _playerAnimator;
         private SwitchPlayerCannonCamera _switchPlayerCannon;
+        private AudioSource _deathAudio;
+
+        private bool _deathAnimationPlayed;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -25,6 +28,7 @@ namespace AstroWorld.Player.StatusDisplay
         {
             _playerAnimator = GetComponent<Animator>();
             _deactivatePlayer = GetComponent<DeactivatePlayerControls>();
+            _deathAudio = GetComponent<AudioSource>();
 
             _healthSetter = GetComponent<HealthSetter>();
             _healthSetter.healthZero += AnimatePlayerDead;
@@ -35,12 +39,18 @@ namespace AstroWorld.Player.StatusDisplay
 
         private void AnimatePlayerDead()
         {
+            if (_deathAnimationPlayed)
+                return;
+
+            _deathAnimationPlayed = true;
+
             if (_switchPlayerCannon == null)
             {
                 _switchPlayerCannon.DeactivateCannonControl();
                 _switchPlayerCannon.MakeCannonUnusable();
             }
 
+            _deathAudio.Play();
             _deactivatePlayer.DisablePlayerControls(false);
             _playerAnimator.SetBool(PlayerAnimationParams.Dead, true);
         }

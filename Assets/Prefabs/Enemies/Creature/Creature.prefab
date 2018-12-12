@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battery: {fileID: 1000010565588344, guid: 686fd8e833c62714e8d90ea73c3873e2, type: 2}
   enemyAlertRange: 30
+  maxEnemiesForChaos: 5
 --- !u!114 &114224813620294760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1108,6 +1109,7 @@ MonoBehaviour:
     type: 2}
   launchEffect: {fileID: 1688836073969784, guid: 9a5f9a9053e46d345b97fa06a9463e18,
     type: 2}
+  shotEffect: {fileID: 1099936285614038, guid: 2a3f6a9d6c5686444aca78ad64c102d2, type: 2}
   launchPoints:
   - {fileID: 4273669365526554}
   attackTime: 3

@@ -683,6 +683,7 @@ MonoBehaviour:
     type: 2}
   launchEffect: {fileID: 1688836073969784, guid: c4a0609ba613004479bddac1ab78f765,
     type: 2}
+  shotEffect: {fileID: 1099936285614038, guid: 2a3f6a9d6c5686444aca78ad64c102d2, type: 2}
   launchPoints:
   - {fileID: 4569966875969598}
   attackTime: 3
