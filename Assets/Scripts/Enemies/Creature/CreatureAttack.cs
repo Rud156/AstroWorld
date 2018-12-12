@@ -51,6 +51,7 @@ namespace AstroWorld.Enemies.Creature
                 base.launchPoints[i].transform.rotation = lookRotation;
 
                 Instantiate(base.launchEffect, base.launchPoints[i].position, lookRotation);
+                Instantiate(base.shotEffect, transform.position, Quaternion.identity);
 
                 GameObject bulletInstance = Instantiate(base.enemyBullet,
                     base.launchPoints[i].transform.position, Quaternion.identity);

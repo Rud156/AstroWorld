@@ -213,6 +213,7 @@ namespace AstroWorld.Enemies.Creature
             float attackingTime = _creatureAttack.AttackTarget(_player, true);
             yield return new WaitForSeconds(attackingTime);
 
+            _creatureAttack.EndAttack();
             _attacking = false;
         }
 

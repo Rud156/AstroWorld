@@ -10,6 +10,7 @@ namespace AstroWorld.Enemies.Base
         [Header("Effects")]
         public GameObject enemyBullet;
         public GameObject launchEffect;
+        public GameObject shotEffect;
 
         [Header("Launch Points")]
         public Transform[] launchPoints;
