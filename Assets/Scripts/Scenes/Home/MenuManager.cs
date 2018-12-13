@@ -32,7 +32,11 @@ namespace AstroWorld.Scenes.Home
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start() => helpMenu.SetActive(false);
+        void Start()
+        {
+            mainMenu.SetActive(true);
+            helpMenu.SetActive(false);
+        }
 
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -47,7 +51,6 @@ namespace AstroWorld.Scenes.Home
         {
             mainMenu.SetActive(false);
             helpMenu.SetActive(true);
-
         }
 
         public void CloseHelp()

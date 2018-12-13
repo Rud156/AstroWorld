@@ -42,7 +42,6 @@ namespace AstroWorld.Player.StatusDisplay
             _maxBatteryRequired = Random.Range(5, CreatureSpawner.instance.initialSpawnCount / 2);
             _currentBatteryCount = 0;
 
-            _batteriesCollected = true; // TODO: Change this later
             UpdateUIWithCount();
         }
 
