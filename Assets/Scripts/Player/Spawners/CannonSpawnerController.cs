@@ -72,6 +72,8 @@ namespace AstroWorld.Player.Spawners
             }
         }
 
+        public void MarkCannonAsCollected() => _cannonInRange = false;
+
         private void CheckAndUseCannon()
         {
             if (Input.GetKeyDown(Controls.InteractionKey) && _cannonInRange)
@@ -128,6 +130,7 @@ namespace AstroWorld.Player.Spawners
                 {
                     _cannonInstance.SetActive(false);
                     _cannonSpawned = false;
+                    _cannonInRange = false;
                     ResetTimerImage();
                 }
             }

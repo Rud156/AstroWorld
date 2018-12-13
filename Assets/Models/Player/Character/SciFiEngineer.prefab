@@ -505,8 +505,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400066}
   - component: {fileID: 9500000}
-  - component: {fileID: 11400000}
-  - component: {fileID: 11400002}
   m_Layer: 0
   m_Name: SciFiEngineer
   m_TagString: Untagged
@@ -1474,43 +1472,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85c5e349cb17df4b85883ea088c2f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9aa840a3854ebd47b920d1a5c7d693f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightGunBone: {fileID: 400084}
-  leftGunBone: {fileID: 400036}
-  arsenal:
-  - name: Empty
-    rightGun: {fileID: 0}
-    leftGun: {fileID: 0}
-    controller: {fileID: 9100000, guid: e4d38f097ea35254fb4b833d568bb089, type: 2}
-  - name: One Pistol
-    rightGun: {fileID: 100000, guid: 1493f9878f1a95c4e8e3499f6ee36d07, type: 2}
-    leftGun: {fileID: 0}
-    controller: {fileID: 9100000, guid: 8bbca7fa0e7d6cf45b625c38120c55a4, type: 2}
-  - name: Two Pistols
-    rightGun: {fileID: 100000, guid: 1493f9878f1a95c4e8e3499f6ee36d07, type: 2}
-    leftGun: {fileID: 100000, guid: 1493f9878f1a95c4e8e3499f6ee36d07, type: 2}
-    controller: {fileID: 9100000, guid: dbad280ee68364a458cdd686ee45b5d5, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

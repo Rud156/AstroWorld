@@ -4,7 +4,9 @@ using AstroWorld.Cannon;
 using AstroWorld.Common;
 using AstroWorld.Player.Data;
 using AstroWorld.Player.Movement;
+using AstroWorld.Scenes.Loading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace AstroWorld.Player.StatusDisplay
 {
@@ -17,8 +19,6 @@ namespace AstroWorld.Player.StatusDisplay
         private Animator _playerAnimator;
         private SwitchPlayerCannonCamera _switchPlayerCannon;
         private AudioSource _deathAudio;
-
-        private bool _deathAnimationPlayed;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -39,12 +39,7 @@ namespace AstroWorld.Player.StatusDisplay
 
         private void AnimatePlayerDead()
         {
-            if (_deathAnimationPlayed)
-                return;
-
-            _deathAnimationPlayed = true;
-
-            if (_switchPlayerCannon == null)
+            if (_switchPlayerCannon != null)
             {
                 _switchPlayerCannon.DeactivateCannonControl();
                 _switchPlayerCannon.MakeCannonUnusable();
@@ -53,6 +48,17 @@ namespace AstroWorld.Player.StatusDisplay
             _deathAudio.Play();
             _deactivatePlayer.DisablePlayerControls(false);
             _playerAnimator.SetBool(PlayerAnimationParams.Dead, true);
+            StartCoroutine(SwitchSceneOnPlayerDead());
+        }
+
+        private IEnumerator SwitchSceneOnPlayerDead()
+        {
+            yield return new WaitForSeconds(7);
+
+            SceneManager.LoadScene(1);
+            NextSceneData.sceneToLoad = 0;
+            NextSceneData.missionComplete = false;
+            NextSceneData.displayInfo = true;
         }
     }
 }

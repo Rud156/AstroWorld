@@ -35,7 +35,6 @@ namespace AstroWorld.Enemies.Drone
         private DroneController _droneController;
 
         private List<ParticleSystem> _smokeParticles;
-        private bool _droneDead;
 
         private const string DroneDeadAnimParam = "Dead";
 
@@ -91,11 +90,6 @@ namespace AstroWorld.Enemies.Drone
 
         private void DroneDead()
         {
-            if (_droneDead)
-                return;
-
-            _droneDead = true;
-
             _droneAnimator.SetBool(DroneDeadAnimParam, true);
             _droneAgent.enabled = false;
             _healthSetter.enabled = false;

@@ -49,7 +49,7 @@ namespace AstroWorld.Cannon
         {
             float mouseX = Input.GetAxis(Controls.MouseX);
             _yaw += mouseX * horizontalSpeed * Time.deltaTime;
-            transform.eulerAngles = Vector3.up * _yaw;
+            platformHolder.eulerAngles = Vector3.up * _yaw;
         }
 
         private void RotateVertically()

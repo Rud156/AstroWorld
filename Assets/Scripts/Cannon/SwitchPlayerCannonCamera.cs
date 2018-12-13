@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Player.Movement;
+using AstroWorld.Player.Spawners;
 using AstroWorld.Utils;
 using UnityEngine;
 
@@ -57,7 +58,7 @@ namespace AstroWorld.Cannon
             _deactivatePlayer.DisablePlayerControls();
 
             _player.position = playerLockPoint.position;
-            _player.SetParent(transform);
+            _player.SetParent(playerLockPoint);
 
             _playerCannonControl.enabled = true;
             _playerCannonShoot.enabled = true;

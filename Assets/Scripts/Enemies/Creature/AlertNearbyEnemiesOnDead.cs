@@ -30,14 +30,19 @@ namespace AstroWorld.Enemies.Creature
             Instantiate(battery, transform.position, Quaternion.identity);
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, enemyAlertRange);
+
+            int creaturesCount = 0;
             foreach (Collider collider in colliders)
             {
                 CreaturePatrol creaturePatrol = collider.GetComponent<CreaturePatrol>();
                 if (creaturePatrol != null)
+                {
                     creaturePatrol.SetPlayerHostile();
+                    creaturesCount += 1;
+                }
             }
 
-            if (colliders.Length >= maxEnemiesForChaos)
+            if (creaturesCount >= maxEnemiesForChaos)
                 GameManager.instance.IncrementChaosLevel();
         }
     }

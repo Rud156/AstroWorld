@@ -18,6 +18,7 @@ namespace AstroWorld.Common
         public bool destoryOnZero = true;
 
         private float _currentHealthAmount;
+        private bool _healthZeroCalled;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -55,7 +56,11 @@ namespace AstroWorld.Common
         {
             if (_currentHealthAmount <= 0)
             {
-                healthZero?.Invoke();
+                if (!_healthZeroCalled)
+                {
+                    healthZero?.Invoke();
+                    _healthZeroCalled = true;
+                }
 
                 if (destoryOnZero)
                 {

@@ -35,7 +35,10 @@ namespace AstroWorld.Player.Movement
         /// <summary>
         /// This function is called when the behaviour becomes disabled or inactive.
         /// </summary>
-        void OnDisable() => _rotationActive = false;
+        void OnDisable()
+        {
+            _rotationActive = false;
+        }
 
         private void RotatePlayerOnMouse()
         {
