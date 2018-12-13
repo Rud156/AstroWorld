@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Extras;
+using AstroWorld.Scenes.Loading;
 using AstroWorld.Spawners;
 using AstroWorld.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace AstroWorld.Scenes.Main
@@ -53,6 +55,7 @@ namespace AstroWorld.Scenes.Main
         void Start()
         {
             Fader.instance.StartFadeIn();
+            Fader.instance.fadeOutComplete += ChangeScene;
             UpdateUIAndMusic();
         }
 
@@ -66,6 +69,13 @@ namespace AstroWorld.Scenes.Main
                 _chaosCreated = true;
                 StartCoroutine(SpawnDefenceDrones());
             }
+        }
+
+        private void ChangeScene()
+        {
+            NextSceneData.sceneToLoad = 0;
+            NextSceneData.displayInfo = true;
+            SceneManager.LoadScene(1);
         }
 
         private void UpdateUIAndMusic()

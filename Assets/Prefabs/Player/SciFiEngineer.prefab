@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 54511217598704416}
   - component: {fileID: 114449758328569630}
   - component: {fileID: 114001588810051478}
+  - component: {fileID: 114586426581736462}
   m_Layer: 0
   m_Name: Object Detector And Spawner
   m_TagString: Untagged
@@ -1425,7 +1426,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819722896125644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 110.4, y: 104.62, z: 331.79}
+  m_LocalPosition: {x: 414.38, y: 100.34, z: 69.12}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4987238073678918}
@@ -1928,6 +1929,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
+--- !u!114 &114586426581736462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525242628027926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeeb6e919934a4a4281c8e0ee8579ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114595367800482144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2053,7 +2065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79128d7cee7543f49b0b74df839f0dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthAmount: 500
+  maxHealthAmount: 50000
   deathEffect: {fileID: 0}
   destoryOnZero: 0
 --- !u!136 &136897421524412760

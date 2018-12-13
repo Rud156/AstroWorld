@@ -36,7 +36,7 @@ namespace AstroWorld.Player.Movement
 
         public void DisablePlayerControls(bool disableCamera = true)
         {
-            _playerLookAtController.enabled = false;
+            _playerLookAtController.DisableRotation();
             _moveCameraWithMouse.enabled = false;
             _playerMovement.enabled = false;
             cannonSpawner.enabled = false;
@@ -50,7 +50,7 @@ namespace AstroWorld.Player.Movement
 
         public void EnablePlayerControls(bool enableCamera = true)
         {
-            _playerLookAtController.enabled = true;
+            _playerLookAtController.EnableRotation();
             _moveCameraWithMouse.enabled = true;
             _playerMovement.enabled = true;
             cannonSpawner.enabled = true;

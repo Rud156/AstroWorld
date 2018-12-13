@@ -31,7 +31,7 @@ namespace AstroWorld.Player.StatusDisplay
 
         private int _maxBatteryRequired;
         private int _currentBatteryCount;
-        private bool _shipAccessible;
+        private bool _batteriesCollected;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -42,6 +42,7 @@ namespace AstroWorld.Player.StatusDisplay
             _maxBatteryRequired = Random.Range(5, CreatureSpawner.instance.initialSpawnCount / 2);
             _currentBatteryCount = 0;
 
+            _batteriesCollected = true; // TODO: Change this later
             UpdateUIWithCount();
         }
 
@@ -49,19 +50,19 @@ namespace AstroWorld.Player.StatusDisplay
         {
             _currentBatteryCount += 1;
             if (_currentBatteryCount >= _maxBatteryRequired)
-                _shipAccessible = true;
+                _batteriesCollected = true;
 
             UpdateUIWithCount();
         }
 
         private void UpdateUIWithCount()
         {
-            float ratio = Mathf.Clamp01(_currentBatteryCount / _maxBatteryRequired);
+            float ratio = Mathf.Clamp01(_currentBatteryCount / (float)_maxBatteryRequired);
             batteryImage.fillAmount = ratio;
 
             batteryText.text = $"{_currentBatteryCount} / {_maxBatteryRequired}\nBatteries";
         }
 
-        public bool IsShipAccessible() => _shipAccessible;
+        public bool CollectedRequiredBattries() => _batteriesCollected;
     }
 }

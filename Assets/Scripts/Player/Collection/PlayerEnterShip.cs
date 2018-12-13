@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using AstroWorld.Player.StatusDisplay;
+using AstroWorld.Scenes.Loading;
 using AstroWorld.UI;
 using AstroWorld.Utils;
 using UnityEngine;
 
 namespace AstroWorld.Player.Collection
 {
+    [RequireComponent(typeof(Collider))]
     public class PlayerEnterShip : MonoBehaviour
     {
-        private bool _isPlayerNearby;
+        private bool _isShipNearby;
         private bool _triggerActivated;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start() => _isPlayerNearby = false;
+        void Start() => _isShipNearby = false;
 
         /// <summary>
         /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -25,7 +27,7 @@ namespace AstroWorld.Player.Collection
         void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(TagManager.Ship))
-                _isPlayerNearby = true;
+                _isShipNearby = true;
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace AstroWorld.Player.Collection
         void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(TagManager.Ship))
-                _isPlayerNearby = false;
+                _isShipNearby = false;
         }
 
         /// <summary>
@@ -43,11 +45,12 @@ namespace AstroWorld.Player.Collection
         /// </summary>
         void Update()
         {
-            if (_isPlayerNearby && Input.GetKeyDown(Controls.InteractionKey) &&
-                PlayerBatteryCountManager.instance.IsShipAccessible() && !_triggerActivated)
+            if (_isShipNearby && Input.GetKeyDown(Controls.InteractionKey) &&
+                PlayerBatteryCountManager.instance.CollectedRequiredBattries() && !_triggerActivated)
             {
                 Fader.instance.StartFadeOut();
                 _triggerActivated = true;
+                NextSceneData.missionComplete = true;
             }
         }
     }

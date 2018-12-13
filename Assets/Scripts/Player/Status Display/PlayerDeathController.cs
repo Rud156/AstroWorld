@@ -5,6 +5,7 @@ using AstroWorld.Common;
 using AstroWorld.Player.Data;
 using AstroWorld.Player.Movement;
 using AstroWorld.Scenes.Loading;
+using AstroWorld.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -55,10 +56,8 @@ namespace AstroWorld.Player.StatusDisplay
         {
             yield return new WaitForSeconds(7);
 
-            SceneManager.LoadScene(1);
-            NextSceneData.sceneToLoad = 0;
+            Fader.instance.StartFadeOut();
             NextSceneData.missionComplete = false;
-            NextSceneData.displayInfo = true;
         }
     }
 }
