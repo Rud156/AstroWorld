@@ -1134,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &294222090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1501,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.4744213}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.81999207}
+  m_AnchoredPosition: {x: 0, y: 0.8200073}
   m_SizeDelta: {x: 0, y: -1.6499939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &608528769
@@ -3714,7 +3714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1668826358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4023,7 +4023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Q
+  m_Text: E
 --- !u!222 &1820067503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5069,7 +5069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29.600006}
+  m_AnchoredPosition: {x: 0, y: -29.600037}
   m_SizeDelta: {x: -200, y: -59.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091622514
@@ -5122,11 +5122,11 @@ MonoBehaviour:
     about to run out of battery.
 
 
-    Sensors indicate that the floating asteroid beside has creatures that can serve
-    as battery for your ship. You see that the creatures are tame and follow you.
+    Sensors indicate that the floating world beside has creatures that can serve as
+    battery for your ship. You see that the creatures are tame and follow you.
 
 
-    But are they !?...'
+    But are they !?... Beware of killing creatures near each other ...'
 --- !u!222 &2091622516
 CanvasRenderer:
   m_ObjectHideFlags: 0

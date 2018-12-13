@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AstroWorld.Common;
 using AstroWorld.Player.StatusDisplay;
 using AstroWorld.Scenes.Loading;
 using AstroWorld.UI;
@@ -14,11 +15,17 @@ namespace AstroWorld.Player.Collection
         private bool _isShipNearby;
         private bool _triggerActivated;
 
+        private HealthSetter _healthSetter;
+
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start() => _isShipNearby = false;
+        void Start()
+        {
+            _isShipNearby = false;
+            _healthSetter = GetComponent<HealthSetter>();
+        }
 
         /// <summary>
         /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -48,6 +55,7 @@ namespace AstroWorld.Player.Collection
             if (_isShipNearby && Input.GetKeyDown(Controls.InteractionKey) &&
                 PlayerBatteryCountManager.instance.CollectedRequiredBattries() && !_triggerActivated)
             {
+                _healthSetter.enabled = false;
                 Fader.instance.StartFadeOut();
                 _triggerActivated = true;
                 NextSceneData.missionComplete = true;

@@ -80,7 +80,7 @@ namespace AstroWorld.Scenes.Main
 
         private void UpdateUIAndMusic()
         {
-            float chaosRatio = _chaosLevel / maxChaosLevel;
+            float chaosRatio = _chaosLevel / (float)maxChaosLevel;
             chaosImage.fillAmount = chaosRatio;
             backgroundMusic.pitch = ExtensionFunctions.Map(
                 chaosRatio,

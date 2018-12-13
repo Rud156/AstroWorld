@@ -10,6 +10,7 @@ namespace AstroWorld.Player.Movement
     [RequireComponent(typeof(MoveCameraWithMouse))]
     [RequireComponent(typeof(PlayerMovement))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Rigidbody))]
     public class DeactivatePlayerControls : MonoBehaviour
     {
         public GameObject playerCamera;
@@ -20,6 +21,7 @@ namespace AstroWorld.Player.Movement
         private PlayerMovement _playerMovement;
 
         private Animator _playerAnimator;
+        private Rigidbody _playerRB;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
@@ -32,14 +34,17 @@ namespace AstroWorld.Player.Movement
             _playerMovement = GetComponent<PlayerMovement>();
 
             _playerAnimator = GetComponent<Animator>();
+            _playerRB = GetComponent<Rigidbody>();
         }
 
         public void DisablePlayerControls(bool disableCamera = true)
         {
-            _playerLookAtController.DisableRotation();
             _moveCameraWithMouse.enabled = false;
             _playerMovement.enabled = false;
             cannonSpawner.enabled = false;
+
+            _playerLookAtController.DisableRotation();
+            _playerRB.velocity = Vector3.zero;
 
             _playerAnimator.SetFloat(PlayerAnimationParams.HMovement, 0);
             _playerAnimator.SetFloat(PlayerAnimationParams.VMovement, 0);
