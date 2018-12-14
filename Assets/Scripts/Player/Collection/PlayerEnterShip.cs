@@ -25,7 +25,7 @@ namespace AstroWorld.Player.Collection
         void Start()
         {
             _isShipNearby = false;
-            _healthSetter = GetComponent<HealthSetter>();
+            _healthSetter = GetComponentInParent<HealthSetter>();
         }
 
         /// <summary>
