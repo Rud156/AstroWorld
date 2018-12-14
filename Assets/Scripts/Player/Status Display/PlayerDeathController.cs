@@ -5,6 +5,7 @@ using AstroWorld.Common;
 using AstroWorld.Player.Data;
 using AstroWorld.Player.Movement;
 using AstroWorld.Scenes.Loading;
+using AstroWorld.Scenes.Main;
 using AstroWorld.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,6 +55,7 @@ namespace AstroWorld.Player.StatusDisplay
 
         private IEnumerator SwitchSceneOnPlayerDead()
         {
+            InfoTextManager.instance.DisplayText("You Died !!!", Color.red);
             yield return new WaitForSeconds(7);
 
             Fader.instance.StartFadeOut();

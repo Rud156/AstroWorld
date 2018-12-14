@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114994257899597178}
   - component: {fileID: 114985826948056754}
   - component: {fileID: 114426534037656646}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Creature Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

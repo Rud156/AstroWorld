@@ -25,18 +25,19 @@ namespace AstroWorld.Scenes.Home
 
         #endregion Singleton
 
+        [Header("Main Menu")]
         public GameObject mainMenu;
+
+        [Header("Help Menu")]
         public GameObject helpMenu;
+        public GameObject controlsMenu;
+        public GameObject objectiveMenu;
 
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
         /// </summary>
-        void Start()
-        {
-            mainMenu.SetActive(true);
-            helpMenu.SetActive(false);
-        }
+        void Start() => CloseHelp();
 
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -50,13 +51,25 @@ namespace AstroWorld.Scenes.Home
         public void OpenHelp()
         {
             mainMenu.SetActive(false);
+
             helpMenu.SetActive(true);
+            controlsMenu.SetActive(true);
+            objectiveMenu.SetActive(false);
         }
 
         public void CloseHelp()
         {
             mainMenu.SetActive(true);
+
             helpMenu.SetActive(false);
+            controlsMenu.SetActive(true);
+            objectiveMenu.SetActive(false);
+        }
+
+        public void OpenObjectiveMenu()
+        {
+            controlsMenu.SetActive(false);
+            objectiveMenu.SetActive(true);
         }
     }
 }

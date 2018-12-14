@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114311761174276836}
   - component: {fileID: 114197152087218252}
   - component: {fileID: 114439911026910588}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Drone Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

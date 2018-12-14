@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4887666268675326}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Platform Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4832539873341266}
   - component: {fileID: 33996597547610040}
   - component: {fileID: 23973066670268936}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4927041609042006}
   - component: {fileID: 33141637231152908}
   - component: {fileID: 23955973055753320}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4491147779113804}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Launch Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4912248666466030}
   - component: {fileID: 33430283779158796}
   - component: {fileID: 23307747280709558}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pad_f_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4501874327451500}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4652073101072842}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Launch Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4385642023347092}
   - component: {fileID: 33644293125395022}
   - component: {fileID: 23615691342688066}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pad_f_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 114693728166022772}
   - component: {fileID: 114665082325920320}
   - component: {fileID: 114132702783034830}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tiny Cannon
   m_TagString: Cannon
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4929515467740670}
   - component: {fileID: 33015646155656904}
   - component: {fileID: 23158038357896478}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Weapons Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 223797774802520182}
   - component: {fileID: 114120403727017656}
   - component: {fileID: 114003972058936820}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 114891615170284306}
   - component: {fileID: 114402721060094000}
   - component: {fileID: 114372006177691052}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cannon Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422530308040920}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Base Stands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 224988529368519242}
   - component: {fileID: 222125319677467078}
   - component: {fileID: 114030020964586312}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4281076858112168}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Weapons Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4608524392569508}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Launch Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4532489613217734}
   - component: {fileID: 33011209245045854}
   - component: {fileID: 23616804001272782}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pad_r_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 4045473281101356}
   - component: {fileID: 33744769113854138}
   - component: {fileID: 23111429008203544}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pad_r_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579032276637034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 413.41013, y: 100, z: 72.55}
+  m_LocalPosition: {x: 404.06, y: 100, z: 72.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224863541850082202}
@@ -992,7 +992,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 4624059250242054}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 1
   antialiasingMode: 1
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     quality: 2
   fastApproximateAntialiasing:
     fastMode: 1
-    keepAlpha: 0
+    keepAlpha: 1
   fog:
     enabled: 1
     excludeSkybox: 1

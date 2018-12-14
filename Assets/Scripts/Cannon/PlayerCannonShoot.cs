@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EZCameraShake;
+﻿using UnityEngine;
 using AstroWorld.Common;
+using AstroWorld.CustomCamera;
 
 namespace AstroWorld.Cannon
 {
@@ -44,12 +42,7 @@ namespace AstroWorld.Cannon
                     launchPoints[i].forward * launchSpeed;
             }
 
-            CameraShaker.GetInstance(CannonCameraName).ShakeOnce(
-                cameraShake.magnitude,
-                cameraShake.roughness,
-                cameraShake.fadeInTime,
-                cameraShake.fadeOutTime
-            );
+            CameraShakeManager.instance.ShakeShoot();
             Instantiate(shotEffect, transform.position, Quaternion.identity);
         }
     }

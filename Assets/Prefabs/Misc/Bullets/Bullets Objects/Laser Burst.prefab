@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114740480925639316}
   - component: {fileID: 114528455738497258}
   - component: {fileID: 114529595100545218}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Laser Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}

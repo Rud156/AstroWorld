@@ -55,7 +55,9 @@ namespace AstroWorld.Scenes.Main
         void Start()
         {
             Fader.instance.StartFadeIn();
+            Fader.instance.fadeInComplete += DisplayInfoText;
             Fader.instance.fadeOutComplete += ChangeScene;
+
             UpdateUIAndMusic();
         }
 
@@ -70,6 +72,12 @@ namespace AstroWorld.Scenes.Main
                 StartCoroutine(SpawnDefenceDrones());
             }
         }
+
+        private void DisplayInfoText() =>
+            InfoTextManager.instance.DisplayText(
+                "Collect required batteries and return to your ship. Avoid getting killed by the creatures",
+                Color.green
+            );
 
         private void ChangeScene()
         {

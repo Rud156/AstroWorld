@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4876172914630152}
   - component: {fileID: 33368555073628874}
   - component: {fileID: 23235720748428446}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: PA_DroneWingLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4246457058383040}
   - component: {fileID: 33143950342915870}
   - component: {fileID: 23442265396483054}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: PA_DroneBladeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4661437580431192}
   - component: {fileID: 33125067930301716}
   - component: {fileID: 23665616642663292}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: PA_DroneWingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4699641376733916}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Drone Center
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4662824540774428}
   - component: {fileID: 33180303362965728}
   - component: {fileID: 23346255619248550}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: PA_DroneBladeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4282703684186620}
   - component: {fileID: 33942959678001140}
   - component: {fileID: 23948506837966402}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: PA_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4569966875969598}
   - component: {fileID: 33196357725714224}
   - component: {fileID: 23657326733189382}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Shooting Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 114651755376493406}
   - component: {fileID: 114562323936156830}
   - component: {fileID: 114014663348925854}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 4438725822456258}
   - component: {fileID: 33242895800819198}
   - component: {fileID: 23201426572876300}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}

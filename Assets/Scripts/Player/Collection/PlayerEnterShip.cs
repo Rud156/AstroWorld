@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AstroWorld.Common;
 using AstroWorld.Player.StatusDisplay;
 using AstroWorld.Scenes.Loading;
+using AstroWorld.Scenes.Main;
 using AstroWorld.UI;
 using AstroWorld.Utils;
 using UnityEngine;
@@ -56,7 +57,10 @@ namespace AstroWorld.Player.Collection
                 PlayerBatteryCountManager.instance.CollectedRequiredBattries() && !_triggerActivated)
             {
                 _healthSetter.enabled = false;
+
                 Fader.instance.StartFadeOut();
+                InfoTextManager.instance.DisplayText("You completed the mission !!!", Color.green);
+
                 _triggerActivated = true;
                 NextSceneData.missionComplete = true;
             }

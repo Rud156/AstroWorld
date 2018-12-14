@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fe8f4dfe52b3b499203d124de2a03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRange: 15
+  damageRange: 10
   activateOnStart: 1
 --- !u!198 &198038194281108552
 ParticleSystem:
